@@ -20,18 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-import winterbloom_bhb
+from winterbloom_bhb.bhb import BigHonkingButton
 
-bhb = winterbloom_bhb.BigHonkingButton()
-sample = bhb.load_sample("samples/honk.wav")
-
-while True:
-    if bhb.triggered:
-        bhb.gate_out = True
-        bhb.play(sample, pitch_cv=bhb.pitch_in)
-
-    if bhb.released:
-        bhb.gate_out = False
-        # Uncomment the call to stop to make the sample
-        # stop playing as soon as you release the button.
-        # bhb.stop()
+__all__ = ["BigHonkingButton"]

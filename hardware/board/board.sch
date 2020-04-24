@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Big Honking Button"
-Date "2020-03-19"
-Rev "v3"
+Date "2020-04-15"
+Rev "v4"
 Comp "Winterbloom"
 Comment1 "Alethea Flowers"
 Comment2 "CC BY-SA 4.0"
@@ -592,9 +592,9 @@ U 1 1 5E4A57F0
 P 10350 1100
 F 0 "R9" H 10280 1054 50  0000 R CNN
 F 1 "10k" H 10280 1145 50  0000 R CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 10280 1100 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10280 1100 50  0001 C CNN
 F 3 "~" H 10350 1100 50  0001 C CNN
-F 4 "ERA-8AEB103V" H 10350 1100 50  0001 C CNN "mpn"
+F 4 "MF-RES-0805-10K" H 10350 1100 50  0001 C CNN "mpn"
 	1    10350 1100
 	-1   0    0    1   
 $EndComp
@@ -740,18 +740,6 @@ F 3 "" H 6750 3200 50  0001 C CNN
 	1    6750 3200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Reference_Voltage:LM4040LP-10 U4
-U 1 1 5E4BA161
-P 4200 3350
-F 0 "U4" V 4150 3150 50  0000 L CNN
-F 1 "LM4040LP-10" V 4250 2700 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 3150 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 4200 3350 50  0001 C CIN
-F 4 "LM4040DIM3-10.0/NOPB" H 4200 3350 50  0001 C CNN "mpn"
-	1    4200 3350
-	0    1    1    0   
-$EndComp
 Text Notes 7200 3800 0    50   ~ 0
 Vin = -2 to +2\nVout = 3.22 to 0.03
 $Comp
@@ -779,7 +767,6 @@ F 3 "" H 4200 3500 50  0001 C CNN
 $EndComp
 Text GLabel 4650 3200 2    50   Input ~ 0
 VREF_-10
-Connection ~ 4200 3200
 $Comp
 L Device:C C10
 U 1 1 5E4C07C9
@@ -796,7 +783,6 @@ Wire Wire Line
 	4200 3200 4400 3200
 Wire Wire Line
 	4400 3500 4200 3500
-Connection ~ 4200 3500
 Wire Wire Line
 	4400 3200 4650 3200
 Connection ~ 4400 3200
@@ -997,9 +983,9 @@ U 1 1 5E5547AE
 P 8600 1250
 F 0 "R11" V 8393 1250 50  0000 C CNN
 F 1 "1k" V 8484 1250 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8530 1250 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8530 1250 50  0001 C CNN
 F 3 "~" H 8600 1250 50  0001 C CNN
-F 4 "ERA-8AEB102V" H 8600 1250 50  0001 C CNN "mpn"
+F 4 "MF-RES-0805-1K" H 8600 1250 50  0001 C CNN "mpn"
 	1    8600 1250
 	0    1    1    0   
 $EndComp
@@ -1009,9 +995,9 @@ U 1 1 5E555614
 P 6100 1150
 F 0 "R10" V 5893 1150 50  0000 C CNN
 F 1 "1k" V 5984 1150 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6030 1150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 1150 50  0001 C CNN
 F 3 "~" H 6100 1150 50  0001 C CNN
-F 4 "ERA-8AEB102V" H 6100 1150 50  0001 C CNN "mpn"
+F 4 "MF-RES-0805-1K" H 6100 1150 50  0001 C CNN "mpn"
 	1    6100 1150
 	0    1    1    0   
 $EndComp
@@ -1342,9 +1328,9 @@ U 1 1 5E6DE131
 P 4050 4950
 F 0 "R12" H 3850 5000 50  0000 L CNN
 F 1 "10k" H 3850 4900 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3980 4950 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3980 4950 50  0001 C CNN
 F 3 "~" H 4050 4950 50  0001 C CNN
-F 4 "ERA-8AEB103V" H 4050 4950 50  0001 C CNN "mpn"
+F 4 "MF-RES-0805-10K" H 4050 4950 50  0001 C CNN "mpn"
 	1    4050 4950
 	1    0    0    -1  
 $EndComp
@@ -1596,4 +1582,18 @@ F 3 "" H 8200 3300 50  0001 C CNN
 	1    8200 3300
 	1    0    0    -1  
 $EndComp
+$Comp
+L Reference_Voltage:LM4040DBZ-10 U4
+U 1 1 5E97DED0
+P 4200 3350
+F 0 "U4" V 4250 3100 50  0000 L CNN
+F 1 "LM4040DBZ-10" V 4150 2650 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 3150 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 4200 3350 50  0001 C CIN
+F 4 "LM4040DIM3-10.0/NOPB" H 4200 3350 50  0001 C CNN "mpn"
+	1    4200 3350
+	0    1    1    0   
+$EndComp
+Connection ~ 4200 3200
+Connection ~ 4200 3500
 $EndSCHEMATC

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    
+    <title>User Guide - Winterbloom Big Honking Button User Guide</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/cinder.min.css" rel="stylesheet">
+
+    
+    <link href="css/overrides.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href=".">Winterbloom Big Honking Button User Guide</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/master/user_guide/docs/index.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#winterbloom-big-honking-button-user-guide">Winterbloom Big Honking Button User Guide</a></li>
+            <li class="second-level"><a href="#getting-support-and-help">Getting support and help</a></li>
+                
+            <li class="second-level"><a href="#installing-the-module">Installing the module</a></li>
+                
+            <li class="second-level"><a href="#inputs-and-outputs">Inputs and outputs</a></li>
+                
+            <li class="second-level"><a href="#changing-the-sample">Changing the sample</a></li>
+                
+            <li class="second-level"><a href="#modifying-the-code">Modifying the code</a></li>
+                
+            <li class="second-level"><a href="#help-i-change-some-code-and-this-thing-isnt-working">Help! I change some code and this thing isn't working!</a></li>
+                
+            <li class="second-level"><a href="#updating-the-firmware">Updating the firmware</a></li>
+                
+            <li class="second-level"><a href="#acknowledgments-and-thanks">Acknowledgments and thanks</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="winterbloom-big-honking-button-user-guide">Winterbloom Big Honking Button User Guide<a class="headerlink" href="#winterbloom-big-honking-button-user-guide" title="Permanent link">#</a></h1>
+<p>Big Honking Button is, well, a big button that honks. Okay, that's not all- it’s actually a simple sampler in a very silly package. It has pitch CV, gate in, gate out, and you can store up to 4mb of samples on it.</p>
+<h2 id="getting-support-and-help">Getting support and help<a class="headerlink" href="#getting-support-and-help" title="Permanent link">#</a></h2>
+<p>We want you to have a wonderful experience with your module. If you need help or run into problems, please reach out to us. Email is the best way for product issues, whereas Discord and GitHub are great for getting advice and help on how to customize your module.</p>
+<ul>
+<li>Send us <a href="mailto:support@winterbloom.com">an email</a>.</li>
+<li>File a bug <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button">on GitHub</a></li>
+<li>Reach out on the <a href="https://discord.gg/UpfqghQ">Discord</a></li>
+</ul>
+<h2 id="installing-the-module">Installing the module<a class="headerlink" href="#installing-the-module" title="Permanent link">#</a></h2>
+<p>To install this into your Eurorack setup:</p>
+<ol>
+<li>Connect a Eurorack power cable to your power supply and the back of the module. <strong>Note that even though the power connector on the module is keyed, double check that the red stripe is on the side labeled <code>red stripe</code>!</strong></li>
+<li>Screw the module to your rack's rails.</li>
+</ol>
+<h2 id="inputs-and-outputs">Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Permanent link">#</a></h2>
+<p><img alt="images/honk-program-labels.png" src="images/honk-program-labels.png" /></p>
+<p>Big Honking Button has two inputs:</p>
+<ul>
+<li>A gate / trigger in</li>
+<li>A pitch CV in that is 1v/Oct with a -2v to +2v range</li>
+</ul>
+<p>And two outputs:</p>
+<ul>
+<li>A gate / trigger out (0v or 5v)</li>
+<li>An audio out</li>
+</ul>
+<p>With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by <a href="#modifying-the-code">modifying the code</a>.</p>
+<h2 id="changing-the-sample">Changing the sample<a class="headerlink" href="#changing-the-sample" title="Permanent link">#</a></h2>
+<p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can <strong>not</strong> be powered over USB alone).</p>
+<p>Samples must be in mono, 16-bit, 22kHz, signed <code>wav</code> files. Adafruit has an <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files">excellent guide on how to convert sound files</a>.</p>
+<p>To modify the sample that plays:</p>
+<ol>
+<li>Connect the Big Honking Button to your computer using a micro USB cable. It should show up as a small external drive named <code>CIRCUITPY</code></li>
+<li>Navigate to the <code>samples</code> folder in the drive</li>
+<li>Rename or delete the existing <code>sample.wav</code> file</li>
+<li>Copy your sample over and rename it to <code>sample.wav</code></li>
+</ol>
+<p>Your Big Honking Button will reboot and then it should play the new sample! If you run into trouble, please <a href="#getting-support-and-help">reach out</a>.</p>
+<p>You can store and play multiple samples on the Big Honking Button, but to do that, you'll need to learn how to modify some of the code - don't worry! It's not too hard.</p>
+<h2 id="modifying-the-code">Modifying the code<a class="headerlink" href="#modifying-the-code" title="Permanent link">#</a></h2>
+<p>When connected to your computer, Big Honking Button shows up as a small drive named <code>CIRCUITPY</code>. In that drive, you should find a file named <code>code.py</code>. Big Honking Button runs <a href="https://circuitpython.org">CircuitPython</a> which means that its firmware is written in the approachable <a href="https://python.org">Python</a> programming language and you don't need any special knowledge or compilers to make changes to it. So, open up that file in your favorite text editor, we're going to make some changes!</p>
+<p>If you don't have a text editor - that's okay! While you could use Notepad (Windows) or TextEdit (Mac), these can sometimes have issues with CircuitPython devices like Big Honking Button. I'd recommend <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-mu-editor">installing Mu</a> if you're new to this whole world. You can read more about editing code for CircuitPython in <a href="https://learn.adafruit.com/welcome-to-circuitpython/creating-and-editing-code">Adafruit's guide</a>.</p>
+<p>As a way to get your feet let's change how the Big Honking Button behaves. By default, when you press the button it plays the <em>entire</em> sample, even if you release the button while the sample is still playing (this is <strong>trigger mode</strong>). This will make it where the sample will stop as soon as you let go of the button (or <strong>gate</strong> mode).</p>
+<p>In the <code>code.py</code> you should see some code that looks like this (it's at the bottom):</p>
+<pre><code class="python">if bhb.released:
+    bhb.gate_out = False
+    # Uncomment the call to stop to make the sample
+    # stop playing as soon as you release the button.
+    # bhb.stop()
+</code></pre>
+
+<p>Modify this code so that it looks like this:</p>
+<pre><code class="python">if bhb.released:
+    bhb.gate_out = False
+    # Uncomment the call to stop to make the sample
+    # stop playing as soon as you release the button.
+    bhb.stop()
+</code></pre>
+
+<div class="admonition warning">
+<p class="admonition-title">Be careful</p>
+<p>Python is <em>whitespace-sensitive</em>. That means tabs and spaces are important! Make sure that you don't accidentally change the indentation level of this line.</p>
+</div>
+<p>Okay, save the file! Your Big Honking Button should restart and now it should stop the sample as soon as you let go of the button, try pressing it rapidly to see the effect.</p>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
+<p>If things aren't working, see the section below on finding problems or <a href="#getting-support-and-help">reach out</a>!</p>
+</div>
+<p><strong>Congrats</strong>, you've made your first change to how the module works!  🎉</p>
+<p>Big Honking Button can store multiple samples and you can use various means to change how they're triggered. We'll be adding a sample showing just that soon, but don't be afraid to experiment and reach out if you need any help!</p>
+<p>If you want to you can learn more about <a href="https://learn.adafruit.com/welcome-to-circuitpython/overview">CircuitPython</a> to the most of your module. Also, please come chat on the <a href="https://discord.gg/UpfqghQ">Discord</a> where you can ask questions and see what others are doing with their Big Honking Button!</p>
+<h2 id="help-i-change-some-code-and-this-thing-isnt-working">Help! I change some code and this thing isn't working!<a class="headerlink" href="#help-i-change-some-code-and-this-thing-isnt-working" title="Permanent link">#</a></h2>
+<p>There's probably some sort of error in the program. Don't worry, you can get it figured out.</p>
+<p>If you connect using the <a href="https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console">serial console</a> you should be able to see the error. If you don't see it right away, you might need to reset the board (either by pressing the little button on the bottom of the module or power cycling your synth). Sometimes you can press <code>Ctrl+C</code> followed by <code>Ctrl+D</code> in the serial console to get the board to reset and tell you the error.</p>
+<p>In any case, reach out on <a href="https://discord.gg/UpfqghQ">Discord</a> and we can walk you through figuring out what went wrong.</p>
+<h2 id="updating-the-firmware">Updating the firmware<a class="headerlink" href="#updating-the-firmware" title="Permanent link">#</a></h2>
+<p>Updating the firmware requires two steps: Updating CircuitPython and updating Big Honking Button's libraries.</p>
+<h3>Updating CircuitPython</h3>
+<ol>
+<li><a href="https://circuitpython.org/board/winterbloom_big_honking_button/">Download the latest version of CircuitPython for Winterbloom Big Honking Button</a>.</li>
+<li>Connect Big Honking Button to your computer via USB. The USB port is located underneath the panel. Note that you still have to power the module from a Eurorack power supply.</li>
+<li>Place Big Honking Button in bootloader mode by pressing the reset button twice quickly. The reset button is located on the bottom of the module just below the power connector. Once in bootloader mode, you should see a drive on your computer named <code>HONKBOOT</code>.</li>
+<li>Copy the <code>uf2</code> file from step 1 to the <code>HONKBOOT</code> drive. The module should restart by itself.</li>
+</ol>
+<h3>Updating Big Honking Button's libraries</h3>
+<ol>
+<li><a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/releases">Download the latest release bundle for Big Honking Button</a>.</li>
+<li>Unzip the release bundle, and then copy the contents to Big Honking Button's <code>CIRCUITPY</code> drive, replacing any existing files.</li>
+<li>Reboot Big Honking Button by power cycling your synthesizer or pressing the reset button again.</li>
+</ol>
+<!-- ## Frequently asked questions
+
+Got a question not answered here? [Reach out](#getting-support-and-help), we'll be happy to help! -->
+
+<h2 id="acknowledgments-and-thanks">Acknowledgments and thanks<a class="headerlink" href="#acknowledgments-and-thanks" title="Permanent link">#</a></h2>
+<p>Big Honking Button would not be possible without the help of the CircuitPython community and Adafruit Industries.</p></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0</small><br>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+        </p>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap-3.0.3.min.js"></script>
+    
+    <script>var base_url = "."</script>
+    
+    <script src="js/base.js"></script>
+    <script src="search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 1.1
+Build Date UTC : 2020-04-25 03:31:46
+-->

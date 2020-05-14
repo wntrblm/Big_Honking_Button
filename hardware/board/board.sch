@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:board-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -451,7 +450,7 @@ F 4 "MF-CAP-0603-1uF" H 4650 1250 50  0001 C CNN "mpn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R2
+L Device:R_US R2
 U 1 1 5E48CFC1
 P 4800 1400
 F 0 "R2" H 4730 1354 50  0000 R CNN
@@ -485,7 +484,7 @@ F 3 "" H 5350 1050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R4
+L Device:R_US R4
 U 1 1 5E490A91
 P 5650 1500
 F 0 "R4" V 5850 1500 50  0000 C CNN
@@ -500,7 +499,7 @@ Wire Wire Line
 	5100 1250 5350 1250
 Connection ~ 4800 1250
 $Comp
-L Device:R R3
+L Device:R_US R3
 U 1 1 5E48FF0C
 P 4950 1250
 F 0 "R3" V 4743 1250 50  0000 C CNN
@@ -575,7 +574,7 @@ F 3 "" H 8250 1200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R8
+L Device:R_US R8
 U 1 1 5E4A526F
 P 9900 1450
 F 0 "R8" V 9693 1450 50  0000 C CNN
@@ -587,7 +586,7 @@ F 4 "ERA-8AEB104V" H 9900 1450 50  0001 C CNN "mpn"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R9
+L Device:R_US R9
 U 1 1 5E4A57F0
 P 10350 1100
 F 0 "R9" H 10280 1054 50  0000 R CNN
@@ -652,7 +651,7 @@ F 4 "MCP6001T-I/OT" H 6850 3500 50  0001 C CNN "mpn"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R5
+L Device:R_US R5
 U 1 1 5E4B2A88
 P 6150 3600
 F 0 "R5" V 5943 3600 50  0000 C CNN
@@ -664,7 +663,7 @@ F 4 "ERA-8AEB104V" H 6150 3600 50  0001 C CNN "mpn"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R7
+L Device:R_US R7
 U 1 1 5E4B2F81
 P 6850 4100
 F 0 "R7" V 7050 4100 50  0000 C CNN
@@ -687,7 +686,7 @@ Wire Wire Line
 	6550 3600 6300 3600
 Connection ~ 6550 3600
 $Comp
-L Device:R R6
+L Device:R_US R6
 U 1 1 5E4B5FFD
 P 6150 3950
 F 0 "R6" V 5943 3950 50  0000 C CNN
@@ -743,7 +742,7 @@ $EndComp
 Text Notes 7200 3800 0    50   ~ 0
 Vin = -2 to +2\nVout = 3.22 to 0.03
 $Comp
-L Device:R R1
+L Device:R_US R1
 U 1 1 5E4BC7EA
 P 4200 3050
 F 0 "R1" H 4130 3004 50  0000 R CNN
@@ -978,7 +977,7 @@ Wire Wire Line
 	7150 4450 7000 4450
 Connection ~ 7150 4100
 $Comp
-L Device:R R11
+L Device:R_US R11
 U 1 1 5E5547AE
 P 8600 1250
 F 0 "R11" V 8393 1250 50  0000 C CNN
@@ -990,7 +989,7 @@ F 4 "MF-RES-0805-1K" H 8600 1250 50  0001 C CNN "mpn"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R10
+L Device:R_US R10
 U 1 1 5E555614
 P 6100 1150
 F 0 "R10" V 5893 1150 50  0000 C CNN
@@ -1201,17 +1200,6 @@ F 4 "MF-SW-TACT-4.2MM" H 3600 7500 50  0001 C CNN "mpn"
 	1    3600 7500
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0148
-U 1 1 5E69FB3A
-P 3500 7600
-F 0 "#PWR0148" H 3500 7350 50  0001 C CNN
-F 1 "GND" H 3505 7427 50  0000 C CNN
-F 2 "" H 3500 7600 50  0001 C CNN
-F 3 "" H 3500 7600 50  0001 C CNN
-	1    3500 7600
-	0    1    1    0   
-$EndComp
 Text GLabel 1000 6900 0    50   Input ~ 0
 RESET
 Text GLabel 3500 7400 0    50   Input ~ 0
@@ -1323,7 +1311,7 @@ FLASH_MISO
 Wire Wire Line
 	4000 5100 4050 5100
 $Comp
-L Device:R R12
+L Device:R_US R12
 U 1 1 5E6DE131
 P 4050 4950
 F 0 "R12" H 3850 5000 50  0000 L CNN
@@ -1394,7 +1382,7 @@ F 3 "" H 4650 6850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R13
+L Device:R_US R13
 U 1 1 5E6E6D2E
 P 4650 6400
 F 0 "R13" H 4580 6354 50  0000 R CNN
@@ -1596,4 +1584,15 @@ F 4 "LM4040DIM3-10.0/NOPB" H 4200 3350 50  0001 C CNN "mpn"
 $EndComp
 Connection ~ 4200 3200
 Connection ~ 4200 3500
+$Comp
+L power:GND #PWR0148
+U 1 1 5E69FB3A
+P 3500 7600
+F 0 "#PWR0148" H 3500 7350 50  0001 C CNN
+F 1 "GND" H 3505 7427 50  0000 C CNN
+F 2 "" H 3500 7600 50  0001 C CNN
+F 3 "" H 3500 7600 50  0001 C CNN
+	1    3500 7600
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-# This advanced sample is similar to the sine example, except
+# This advanced example is similar to the sine example, except
 # it generates white noise.
 
 import array

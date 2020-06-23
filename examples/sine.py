@@ -1,4 +1,4 @@
-# This advanced sample shows how to create a custom waveform
+# This advanced example shows how to create a custom waveform
 # for the button to output. In this case, it generates a
 # sine wave. You can use this example as a basis for very
 # basic oscillators.

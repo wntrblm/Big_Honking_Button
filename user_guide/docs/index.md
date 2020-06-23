@@ -98,6 +98,13 @@ Big Honking Button can store multiple samples and you can use various means to c
 If you want to you can learn more about [CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython/overview) to the most of your module. Also, please come chat on the [Discord][discord] where you can ask questions and see what others are doing with their Big Honking Button!
 
 
+## Examples
+
+Big Honking Button can do all sorts of things! We've made a few examples to get you started:
+
+
+
+
 ## Help! I change some code and this thing isn't working!
 
 There's probably some sort of error in the program. Don't worry, you can get it figured out.

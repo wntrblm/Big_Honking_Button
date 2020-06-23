@@ -97,10 +97,11 @@ class BigHonkingButton:
     def load_sample(self, path):
         return audioio.WaveFile(open(path, "rb"))
 
-    def play(self, sample, pitch_cv=0):
-        sample.sample_rate = int(44100 * pow(2, pitch_cv))
+    def play(self, sample, pitch_cv=None, loop=False):
+        if pitch_cv is not None:
+            sample.sample_rate = int(44100 * pow(2, pitch_cv))
         self.audio_out.stop()
-        self.audio_out.play(sample)
+        self.audio_out.play(sample, loop=loop)
 
     def stop(self):
         self.audio_out.stop()

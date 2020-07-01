@@ -103,7 +103,7 @@ If you want to you can learn more about [CircuitPython](https://learn.adafruit.c
 Big Honking Button can do all sorts of things! We've made a few examples to get you started. If you want to use these, copy their contents to `code.py` on the `CIRCUITPY` drive. **Be sure to save it as the correct name,** if you don't name it `code.py` it won't change anything. If you want to restore the original `code.py` it is [here](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/default.py).
 
 1. [Cycle example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/cycle.py): Shows how to load multiple samples and cycle between them.
-1. [Random example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/default.py): Shows how to load multiple samples and choose one at random.
+1. [Random example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/random.py): Shows how to load multiple samples and choose one at random.
 1. [Tap tempo example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/tap_tempo.py): Shows how to use the button to set the tempo and have the module play back a sample at each beat.
 1. [Sine example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/sine.py): An advanced example that shows how to generate a custom waveform.
 1. [Noise example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/noise.py): An advanced example that shows how to generate noise.

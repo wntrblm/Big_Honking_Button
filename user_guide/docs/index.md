@@ -41,14 +41,14 @@ With the default code, it will trigger the sample and play it through the audio 
 
 You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can **not** be powered over USB alone).
 
-Samples must be in mono, 16-bit, 22kHz, signed `wav` files. Adafruit has an [excellent guide on how to convert sound files](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files).
+Samples must be in mono, 16-bit, 44.1kHz, signed `wav` files. Adafruit has an [excellent guide on how to convert sound files](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files), though your sample can be 44.1kHz and not 22kHz.
 
 To modify the sample that plays:
 
 1. Connect the Big Honking Button to your computer using a micro USB cable. It should show up as a small external drive named `CIRCUITPY`
 1. Navigate to the `samples` folder in the drive
-1. Rename or delete the existing `sample.wav` file
-1. Copy your sample over and rename it to `sample.wav`
+1. Rename or delete the existing `honk.wav` file
+1. Copy your sample over and rename it to `honk.wav`
 
 Your Big Honking Button will reboot and then it should play the new sample! If you run into trouble, please [reach out](#getting-support-and-help).
 

@@ -24,6 +24,10 @@
     <link href="css/cinder.min.css" rel="stylesheet">
 
     
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
     <link href="css/overrides.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,11 +64,37 @@
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">User Guide</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="build/">Kit Build Instructions</a>
+                    </li>
+                
+                
+                </ul>
 
             <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                             <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="build/">
+                            Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
@@ -133,13 +163,13 @@
 <p>With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by <a href="#modifying-the-code">modifying the code</a>.</p>
 <h2 id="changing-the-sample">Changing the sample<a class="headerlink" href="#changing-the-sample" title="Permanent link">#</a></h2>
 <p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can <strong>not</strong> be powered over USB alone).</p>
-<p>Samples must be in mono, 16-bit, 22kHz, signed <code>wav</code> files. Adafruit has an <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files">excellent guide on how to convert sound files</a>.</p>
+<p>Samples must be in mono, 16-bit, 44.1kHz, signed <code>wav</code> files. Adafruit has an <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files">excellent guide on how to convert sound files</a>, though your sample can be 44.1kHz and not 22kHz.</p>
 <p>To modify the sample that plays:</p>
 <ol>
 <li>Connect the Big Honking Button to your computer using a micro USB cable. It should show up as a small external drive named <code>CIRCUITPY</code></li>
 <li>Navigate to the <code>samples</code> folder in the drive</li>
-<li>Rename or delete the existing <code>sample.wav</code> file</li>
-<li>Copy your sample over and rename it to <code>sample.wav</code></li>
+<li>Rename or delete the existing <code>honk.wav</code> file</li>
+<li>Copy your sample over and rename it to <code>honk.wav</code></li>
 </ol>
 <p>Your Big Honking Button will reboot and then it should play the new sample! If you run into trouble, please <a href="#getting-support-and-help">reach out</a>.</p>
 <p>You can store and play multiple samples on the Big Honking Button, but to do that, you'll need to learn how to modify some of the code - don't worry! It's not too hard.</p>
@@ -227,7 +257,15 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap-3.0.3.min.js"></script>
+
     
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/python.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
     <script>var base_url = "."</script>
     
     <script src="js/base.js"></script>
@@ -304,6 +342,6 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
 </html>
 
 <!--
-MkDocs version : 1.1
-Build Date UTC : 2020-07-01 17:48:52
+MkDocs version : 1.1.2
+Build Date UTC : 2020-09-29 20:54:56.401798+00:00
 -->

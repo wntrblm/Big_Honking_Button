@@ -11,3 +11,15 @@ ul.nav li.first-level {
 footer small:last-child {
     display: none;
 }
+
+img[align=left] {
+    width: 50%;
+}
+img[align=right] {
+    width: 50%;
+}
+
+div[role=main] img {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

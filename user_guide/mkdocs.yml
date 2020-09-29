@@ -11,8 +11,10 @@ extra_css:
 markdown_extensions:
   - admonition
   - def_list
+  - attr_list
   - toc:
       permalink: "#"
       toc_depth: 2
 nav:
   - "User Guide": index.md
+  - "Kit Build Instructions": build.md

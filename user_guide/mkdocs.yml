@@ -15,6 +15,8 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: True
   - pymdownx.superfences
+  - pymdownx.magiclink
+  - md_in_html
 nav:
   - "User Guide": index.md
   - "Kit Build Instructions": build.md

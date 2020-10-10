@@ -1,137 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    
-    
-    <link rel="shortcut icon" href="../img/favicon.ico">
+		
+		<link rel="shortcut icon" href="/favicon.ico">
 
-    
     <title>Kit Build Instructions - Winterbloom Big Honking Button User Guide</title>
-    
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
-    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="../css/base.min.css" rel="stylesheet">
-    <link href="../css/cinder.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap.min.css" rel="stylesheet">
 
-    
-        
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
-        
-    
-    <link href="../css/overrides.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/style.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-        <![endif]-->
+    <!-- Syntax highlighting css -->
+		<link href="/pygments.css" rel="stylesheet">
 
-    
-
-     
-</head>
-
-<body>
-
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  </head>
+  <body>
     <div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<a class="navbar-brand" href="/">
+					<img src="/winterbloom-logo.png" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+				</a>
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						
+							<a class="nav-link" href="..">User Guide</a>
+						
+							<a class="nav-link" href="./">Kit Build Instructions</a>
+						
+					</div>
+				</div>
+				
+			</nav>
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-
-            <!-- Main title -->
-
-            <a class="navbar-brand" href="..">Winterbloom Big Honking Button User Guide</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                
-                
-                    <li >
-                        <a href="..">User Guide</a>
-                    </li>
-                
-                
-                
-                    <li class="active">
-                        <a href="./">Kit Build Instructions</a>
-                    </li>
-                
-                
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                            <i class="fas fa-search"></i> Search
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="..">
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li class="disabled">
-                        <a rel="next" >
-                            Next <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/master/user_guide/docs/build.md"><i class="fab fa-github"></i> Edit on GitHub</a>
-                    </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-        
-        
-        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#big-honking-button-kit-build-guide">Big Honking Button Kit Build Guide</a></li>
-            <li class="second-level"><a href="#tools-and-materials-required">Tools and materials required</a></li>
-                
-            <li class="second-level"><a href="#kit-contents">Kit contents</a></li>
-                
-        <li class="first-level "><a href="#soldering-the-jacks">Soldering the jacks</a></li>
-        <li class="first-level "><a href="#soldering-the-jst-connector">Soldering the JST connector</a></li>
-            <li class="second-level"><a href="#soldering-the-power-connector">Soldering the power connector</a></li>
-                
-            <li class="second-level"><a href="#cleaning-the-board">Cleaning the board</a></li>
-                
-            <li class="second-level"><a href="#soldering-the-wire-harness-to-the-button">Soldering the wire harness to the button</a></li>
-                
-            <li class="second-level"><a href="#putting-it-all-together">Putting it all together</a></li>
-                
-            <li class="second-level"><a href="#all-done">All done</a></li>
-                
-    </ul>
-</div></div>
-        <div class="col-md-9" role="main">
-
-<h1 id="big-honking-button-kit-build-guide">Big Honking Button Kit Build Guide<a class="headerlink" href="#big-honking-button-kit-build-guide" title="Permanent link">#</a></h1>
+			<article>
+				<h1 id="big-honking-button-kit-build-guide">Big Honking Button Kit Build Guide<a class="headerlink" href="#big-honking-button-kit-build-guide" title="Permanent link">#</a></h1>
 <p>Welcome to the build guide for the Big Honking Button! We hope you have a great time putting this module together and a wonderful time using it.</p>
 <p>Please read all instructions thoroughly before starting. If you have questions or run into trouble please reach out to us on <a href="https://discord.gg/UpfqghQ">discord</a> or drop us an email at support@winterbloom.com</p>
 <p>This build is a <strong>beginner level</strong> kit. Some soldering experience is helpful but not required. If it's your first time soldering we recommend reading through <a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering">Adafruit's guide to excellent soldering</a>. This build takes around <strong>two hours</strong> to complete.</p>
@@ -234,105 +147,22 @@ that the jacks stay flush against the board. You can double-check after each sol
 <h2 id="all-done">All done<a class="headerlink" href="#all-done" title="Permanent link">#</a></h2>
 <p>Congratulations! You've finished your Big Honking Button!</p>
 <p><img alt="All done" src="../images/finished.jpg" /></p>
-<p>Now that it's all put together go check out the <a href="/index">User's Guide</a> and please show us your work by tweeting at <a href="https://twitter.com/wntrblm">@wntrblm</a> or tagging <a href="https://instagram.com/wntrblm">@wntrblm</a> in your instagram post.</p></div>
-        
-        
-    </div>
+<p>Now that it's all put together go check out the <a href="/index">User's Guide</a> and please show us your work by tweeting at <a href="https://twitter.com/wntrblm">@wntrblm</a> or tagging <a href="https://instagram.com/wntrblm">@wntrblm</a> in your instagram post.</p>
+			</article>
 
-    <footer class="col-md-12 text-center">
-        
-        <hr>
-        <p>
-        <small>© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0</small><br>
-        
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
-        </p>
-
-        
-        
-    </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/bootstrap-3.0.3.min.js"></script>
-
-    
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
-        
-                <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/python.min.js"></script>
-        
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    <script>var base_url = ".."</script>
-    
-    <script src="../js/base.js"></script>
-    <script src="../search/main.js"></script>
-
-    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-    </body>
-
+			<footer>
+				<p class="copyright">
+					© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0
+				</p>
+				<p class="edit-me">
+					Found an issue? <a href="mailto:support@winterbloom.com">Send us a message</a> or <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/master/user_guide/docs/build.md">Edit this page on GitHub</a>.
+				</p>
+				<p class="updated">
+					Last updated on October 10, 2020
+				</p>
+			</footer>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="/script.js"></script>
 </html>

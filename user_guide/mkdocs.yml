@@ -3,11 +3,8 @@ copyright: "© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0"
 repo_url: "https://github.com/theacodes/Winterbloom-Big-Honking-Button"
 edit_uri: edit/master/user_guide/docs
 theme:
-  name: cinder
-  hljs_languages:
-  - python
-extra_css:
-  - "css/overrides.css"
+  name: null
+  custom_dir: 'theme/'
 markdown_extensions:
   - admonition
   - def_list
@@ -15,6 +12,9 @@ markdown_extensions:
   - toc:
       permalink: "#"
       toc_depth: 2
+  - pymdownx.highlight:
+      use_pygments: True
+  - pymdownx.superfences
 nav:
   - "User Guide": index.md
   - "Kit Build Instructions": build.md

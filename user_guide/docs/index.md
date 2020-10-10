@@ -1,4 +1,4 @@
-# Winterbloom Big Honking Button User Guide
+# Big Honking Button User Guide
 
 Big Honking Button is, well, a big button that honks. Okay, that's not all- it’s actually a simple sampler in a very silly package. It has pitch CV, gate in, gate out, and you can store up to 4mb of samples on it.
 
@@ -109,7 +109,7 @@ Big Honking Button can do all sorts of things! We've made a few examples to get 
 1. [Noise example](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/examples/noise.py): An advanced example that shows how to generate noise.
 
 
-## Help! I change some code and this thing isn't working!
+## Help! I changed some code and this thing isn't working!
 
 There's probably some sort of error in the program. Don't worry, you can get it figured out.
 

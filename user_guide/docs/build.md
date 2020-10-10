@@ -75,8 +75,8 @@ The JST connector goes on the **back** side of the board.
 
 Note the orientation of the connector. It shouldn't be overhanging the board, it should come right up to the edge.
 
-![Correct placement of connector](images/jst-correct.jpg){: align=left }
-![incorrect placement of connector](images/jst-incorrect.jpg){: align=right }
+![Correct placement of connector](images/jst-correct.jpg){: class="float-left" }
+![incorrect placement of connector](images/jst-incorrect.jpg){: class="float-right" }
 
 Just like with the 1/8" jacks, flip the board over and solder the two pins of the JST connector to the board. Make sure the connector is flush with the board. You can use a piece of tape to hold it in place.
 

@@ -23,6 +23,7 @@
 import time
 
 import audioio
+import audiocore
 import board
 import digitalio
 import winterbloom_voltageio
@@ -95,7 +96,7 @@ class BigHonkingButton:
         return result
 
     def load_sample(self, path):
-        return audioio.WaveFile(open(path, "rb"))
+        return audiocore.WaveFile(open(path, "rb"))
 
     def play(self, sample, pitch_cv=None, loop=False):
         if pitch_cv is not None:

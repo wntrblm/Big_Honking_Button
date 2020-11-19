@@ -2,3 +2,4 @@ calibrations/
 bootloader.bin
 firmware.uf2
 .cache
+distribution

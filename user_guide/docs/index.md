@@ -139,7 +139,7 @@ Updating the firmware requires two steps: Updating CircuitPython and updating Bi
 
 Got a question not answered here? [Reach out](#getting-support-and-help), we'll be happy to help! -->
 
-## Open Source Hardware & Software
+## Open source hardware & software
 
 Big Honking Button is completely open source and hacking is encouraged.
 

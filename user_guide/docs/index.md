@@ -57,7 +57,7 @@ You can store and play multiple samples on the Big Honking Button, but to do tha
 
 ## Modifying the code
 
-When connected to your computer, Big Honking Button shows up as a small drive named `CIRCUITPY`. In that drive, you should find a file named `code.py`. Big Honking Button runs [CircuitPython](https://circuitpython.org) which means that its firmware is written in the approachable [Python](https://python.org) programming language and you don't need any special knowledge or compilers to make changes to it. So, open up that file in your favorite text editor, we're going to make some changes!
+When connected to your computer, Big Honking Button shows up as a small drive named `CIRCUITPY`. In that drive, you should find a file named `code.py`. Big Honking Button runs [CircuitPython][CircuitPython] which means that its firmware is written in the approachable [Python](https://python.org) programming language and you don't need any special knowledge or compilers to make changes to it. So, open up that file in your favorite text editor, we're going to make some changes!
 
 If you don't have a text editor - that's okay! While you could use Notepad (Windows) or TextEdit (Mac), these can sometimes have issues with CircuitPython devices like Big Honking Button. I'd recommend [installing Mu](https://learn.adafruit.com/welcome-to-circuitpython/installing-mu-editor) if you're new to this whole world. You can read more about editing code for CircuitPython in [Adafruit's guide](https://learn.adafruit.com/welcome-to-circuitpython/creating-and-editing-code).
 
@@ -139,10 +139,21 @@ Updating the firmware requires two steps: Updating CircuitPython and updating Bi
 
 Got a question not answered here? [Reach out](#getting-support-and-help), we'll be happy to help! -->
 
+## Open Source Hardware & Software
+
+Big Honking Button is completely open source and hacking is encouraged.
+
+* The [firmware](https://github.com/theacodes/Winterbloom-Big-Honking-Button/tree/master/firmware) is available under the [MIT License](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/firmware/LICENSE).
+* The [hardware design](https://github.com/theacodes/Winterbloom-Big-Honking-Button/tree/master/hardware) is available under the [CC BY-SA 4.0 License](https://github.com/theacodes/Winterbloom-Big-Honking-Button/blob/master/hardware/LICENSE) and is designed using [KiCAD](https://kicad.org/) which is free and open-source. You can open the hardware files using KiCAD or you can check out a [PDF of the schematic](https://github.com/theacodes/Winterbloom-Big-Honking-Button/raw/master/hardware/board/board.pdf).
+* [CircuitPython][CircuitPython] is available under the [MIT License](https://github.com/adafruit/circuitpython/blob/main/LICENSE).
+
+![Open Source Hardware Association mark](images/oshw.svg){class=oshw} Big Honking Button is [certified open source hardware](https://certification.oshwa.org/us000678.html).
+
 
 ## Acknowledgments and thanks
 
 Big Honking Button would not be possible without the help of the CircuitPython community and Adafruit Industries.
 
 
+[CircuitPython]: https://circuitpython.org
 [discord]: https://discord.gg/UpfqghQ

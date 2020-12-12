@@ -1519,6 +1519,7 @@ F 0 "Button1" H 9180 5992 50  0000 L CNN
 F 1 "Big button" H 9180 5901 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9100 6000 50  0001 C CNN
 F 3 "~" H 9100 6000 50  0001 C CNN
+F 4 "OBSF-30" H 9100 6000 50  0001 C CNN "mpn"
 	1    9100 6000
 	1    0    0    -1  
 $EndComp

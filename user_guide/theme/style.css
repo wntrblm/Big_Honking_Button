@@ -170,6 +170,12 @@ article img.float-right, article img.float-left {
   padding: 2em 0.5em;
 }
 
+article img.oshw {
+  display: inline;
+  width: 100px;
+  padding: 0;
+}
+
 footer {
   margin-top: 5em;
   margin-bottom: 2em;

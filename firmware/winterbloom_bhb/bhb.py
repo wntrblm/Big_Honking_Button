@@ -22,15 +22,42 @@
 
 import time
 
-import audioio
 import audiocore
+import audioio
 import board
 import digitalio
 import winterbloom_voltageio
 
+try:
+    import _bhb
+except ImportError:
+    raise EnvironmentError("This BHB library requires CircuitPython >= 6.0.0")
+
+
+def _detect_board_revision():
+    v5pin = digitalio.DigitalInOut(board.V5)
+    v5pin.switch_to_input(pull=digitalio.Pull.UP)
+
+    # Pulled low on v5+, pull-up will make it true
+    # on <=v4.
+    if not v5pin.value:
+        return 5
+    else:
+        return 4
+
+
+class _AnalogIn:
+    def __init__(self):
+        _bhb.init_adc()
+
+    @property
+    def value(self):
+        return _bhb.read_adc()
+
 
 class BigHonkingButton:
     def __init__(self):
+        self.board_revision = _detect_board_revision()
         self.pitch_settle_time = 0.001
         self._button = digitalio.DigitalInOut(board.BUTTON)
         self._button.switch_to_input(pull=digitalio.Pull.UP)
@@ -38,10 +65,17 @@ class BigHonkingButton:
         self._gate_in.switch_to_input()
         self._gate_out = digitalio.DigitalInOut(board.GATE_OUT)
         self._gate_out.switch_to_output()
-        self._pitch_in = winterbloom_voltageio.VoltageIn.from_pin(board.PITCH_IN)
-        self._pitch_in.direct_calibration(
-            {64736: -2.0, 48384: -1.0, 32048: 0, 15552: 1.0, 128: 2.0}
-        )
+        self._pitch_in = winterbloom_voltageio.VoltageIn(_AnalogIn())
+
+        if self.board_revision >= 5:
+            self._pitch_in.direct_calibration(
+                {4068: -5.0, 3049: -2.5, 2025: 0, 1001: 2.5, 8: 5.0}
+            )
+        else:
+            self._pitch_in.direct_calibration(
+                {4068: -2.0, 3049: -1.0, 2025: 0, 1001: 1.0, 8: 2.0}
+            )
+
         self.audio_out = audioio.AudioOut(board.HONK_OUT)
 
         self._last_gate_value = False

@@ -64,7 +64,7 @@
 <p>Big Honking Button has two inputs:</p>
 <ul>
 <li>A gate / trigger in</li>
-<li>A pitch CV in that is 1v/Oct with a -2v to +2v range</li>
+<li>A pitch CV in that is 1v/Oct with a -5v to +5v range<sup>see note</sup></li>
 </ul>
 <p>And two outputs:</p>
 <ul>
@@ -72,6 +72,10 @@
 <li>An audio out</li>
 </ul>
 <p>With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by <a href="#modifying-the-code">modifying the code</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Revision differences</p>
+<p>Big Honking Buttons manufactured prior to 2021 (v4 and lower) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.</p>
+</div>
 <h2 id="changing-the-sample">Changing the sample<a class="headerlink" href="#changing-the-sample" title="Permanent link">#</a></h2>
 <p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can <strong>not</strong> be powered over USB alone).</p>
 <p>Samples must be in mono, 16-bit, 44.1kHz, signed <code>wav</code> files. Adafruit has an <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files">excellent guide on how to convert sound files</a>, though your sample can be 44.1kHz and not 22kHz.</p>
@@ -95,7 +99,6 @@
     <span class="c1"># stop playing as soon as you release the button.</span>
     <span class="c1"># bhb.stop()</span>
 </code></pre></div>
-
 <p>Modify this code so that it looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
     <span class="n">bhb</span><span class="o">.</span><span class="n">gate_out</span> <span class="o">=</span> <span class="kc">False</span>
@@ -103,7 +106,6 @@
     <span class="c1"># stop playing as soon as you release the button.</span>
     <span class="n">bhb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Be careful</p>
 <p>Python is <em>whitespace-sensitive</em>. That means tabs and spaces are important! Make sure that you don't accidentally change the indentation level of this line.</p>
@@ -168,7 +170,7 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
 					Found an issue? <a href="mailto:support@winterbloom.com">Send us a message</a> or <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/master/user_guide/docs/index.md">Edit this page on GitHub</a>.
 				</p>
 				<p class="updated">
-					Last updated on December 12, 2020
+					Last updated on January 08, 2021
 				</p>
 			</footer>
 		</div>

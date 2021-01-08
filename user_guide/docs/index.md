@@ -26,7 +26,7 @@ To install this into your Eurorack setup:
 Big Honking Button has two inputs:
 
 - A gate / trigger in
-- A pitch CV in that is 1v/Oct with a -2v to +2v range
+- A pitch CV in that is 1v/Oct with a -5v to +5v range<sup>see note</sup>
 
 And two outputs:
 
@@ -35,6 +35,9 @@ And two outputs:
 
 
 With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by [modifying the code](#modifying-the-code).
+
+!!! note "Revision differences"
+    Big Honking Buttons manufactured prior to 2021 (v4 and lower) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.
 
 
 ## Changing the sample

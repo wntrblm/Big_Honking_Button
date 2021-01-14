@@ -31,7 +31,7 @@ import winterbloom_voltageio
 try:
     import _bhb
 except ImportError:
-    raise EnvironmentError("This BHB library requires CircuitPython >= 6.0.0")
+    raise RuntimeError("This BHB library requires CircuitPython >= 6.0.0")
 
 
 def _detect_board_revision():

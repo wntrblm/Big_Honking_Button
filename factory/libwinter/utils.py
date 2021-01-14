@@ -83,6 +83,7 @@ def wait_for_drive(name, timeout=10):
 
 
 def flush(path):
+    print("Flushing... 🚽")
     if WINDOWS:
         drive, _ = os.path.splitdrive(path)
         subprocess.run(
@@ -278,3 +279,38 @@ def removeprefix(self: str, prefix: str) -> str:
         return self[len(prefix) :]
     else:
         return self[:]
+
+
+def serial_connect(usb_device_id: str):
+    import serial.tools.list_ports
+    import serial
+
+    port_info = list(serial.tools.list_ports.grep(usb_device_id))[0]
+    port = serial.Serial(port_info.device, baudrate=115200, timeout=1)
+
+    return port
+
+
+def force_into_repl(usb_device_id: str):
+    """Forces a circuitpython device into the REPL."""
+    port = serial_connect(usb_device_id)
+
+    # Interrupt with Ctrl + C
+    port.write(b"\x03")
+    # Enter repl with enter after slight delay
+    time.sleep(0.2)
+    port.write(b"\n")
+    port.close()
+
+
+def reset_via_serial(usb_device_id: str):
+    port = serial_connect(usb_device_id)
+
+    # Interrupt with Ctrl + C - not need if already in repl, but doesn't hurt.
+    port.write(b"\x03")
+    # Enter repl with enter after slight delay
+    time.sleep(0.2)
+    port.write(b"\n")
+    # Reset using Ctrl + D
+    port.write(b"\04")
+    port.close()

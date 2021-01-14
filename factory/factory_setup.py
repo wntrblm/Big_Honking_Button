@@ -11,6 +11,7 @@ import requests
 from libwinter import utils
 
 DEVICE_NAME = "winterbloom_big_honking_button"
+USB_DEVICE_ID = "239A:6005"
 JLINK_DEVICE = "ATSAMD21G18"
 JLINK_SCRIPT = "scripts/flash.jlink"
 
@@ -54,6 +55,9 @@ def deploy_circuitpython_code(destination=None):
         print("Waiting for CIRCUITPY drive...")
         destination = utils.wait_for_drive("CIRCUITPY")
 
+    print("Forcing BHB into repl (workaround for CircuitPython issue #3986)")
+    utils.force_into_repl(USB_DEVICE_ID)
+
     print("Cleaning temporary files from src directories...")
     utils.clean_pycache(FIRMWARE_DIR)
     utils.clean_pycache(EXAMPLES_DIR)
@@ -61,6 +65,10 @@ def deploy_circuitpython_code(destination=None):
     utils.download_files_to_cache(FILES_TO_DOWNLOAD)
     print("Copying files...")
     utils.deploy_files(FILES_TO_DEPLOY, destination)
+
+    print("Done copying files, resetting...")
+    utils.reset_via_serial(USB_DEVICE_ID)
+    print("Done!")
 
 
 def main():

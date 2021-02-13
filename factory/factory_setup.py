@@ -1,14 +1,12 @@
-import io
-import time
 import os
-import subprocess
-import shutil
-import zipfile
 import sys
 
-import requests
+import wintertools.fs
+import wintertools.jlink
+import wintertools.circuitpython
+import wintertools.fw_fetch
+import wintertools.uf2_to_bin
 
-from libwinter import utils
 
 DEVICE_NAME = "winterbloom_big_honking_button"
 USB_DEVICE_ID = "239A:6005"
@@ -25,7 +23,7 @@ FILES_TO_DOWNLOAD = {
 }
 
 FILES_TO_DEPLOY = {
-    utils.get_cache_path("winterbloom_voltageio.py"): "lib",
+    wintertools.fs.cache_path("winterbloom_voltageio.py"): "lib",
     os.path.join(FIRMWARE_DIR, "winterbloom_bhb"): "lib",
     os.path.join(ROOT_DIR, "samples"): ".",
     os.path.join(ROOT_DIR, "examples"): ".",
@@ -38,14 +36,14 @@ FILES_TO_DEPLOY = {
 def program_firmware():
     print("========== PROGRAMMING FIRMWARE ==========")
 
-    bootloader_url = utils.find_latest_bootloader(DEVICE_NAME)
-    circuitpython_url = utils.find_latest_circuitpython(DEVICE_NAME)
+    print("Checking for latest bootloader & firmware...")
 
-    utils.download_file_to_cache(bootloader_url, "bootloader.bin")
-    firmware_path = utils.download_file_to_cache(circuitpython_url, "firmware.uf2")
-    utils.convert_uf2_to_bin(firmware_path)
+    wintertools.fw_fetch.latest_bootloader(DEVICE_NAME)
+    firmware_path = wintertools.fw_fetch.latest_circuitpython(DEVICE_NAME)
 
-    utils.run_jlink(JLINK_DEVICE, JLINK_SCRIPT)
+    wintertools.uf2_to_bin(firmware_path)
+
+    wintertools.jlink.run(JLINK_DEVICE, JLINK_SCRIPT)
 
 
 def deploy_circuitpython_code(destination=None):
@@ -53,21 +51,22 @@ def deploy_circuitpython_code(destination=None):
 
     if not destination:
         print("Waiting for CIRCUITPY drive...")
-        destination = utils.wait_for_drive("CIRCUITPY")
+        destination = wintertools.fs.wait_for_drive("CIRCUITPY")
 
     print("Forcing BHB into repl (workaround for CircuitPython issue #3986)")
-    utils.force_into_repl(USB_DEVICE_ID)
+    wintertools.circuitpython.force_into_repl(USB_DEVICE_ID)
 
     print("Cleaning temporary files from src directories...")
-    utils.clean_pycache(FIRMWARE_DIR)
-    utils.clean_pycache(EXAMPLES_DIR)
+    wintertools.fs.clean_pycache(FIRMWARE_DIR)
+    wintertools.fs.clean_pycache(EXAMPLES_DIR)
+
     print("Downloading files to cache...")
-    utils.download_files_to_cache(FILES_TO_DOWNLOAD)
+    wintertools.fs.download_files_to_cache(FILES_TO_DOWNLOAD)
     print("Copying files...")
-    utils.deploy_files(FILES_TO_DEPLOY, destination)
+    wintertools.fs.deploy_files(FILES_TO_DEPLOY, destination)
 
     print("Done copying files, resetting...")
-    utils.reset_via_serial(USB_DEVICE_ID)
+    wintertools.circuitpython.reset_via_serial(USB_DEVICE_ID)
     print("Done!")
 
 
@@ -77,8 +76,8 @@ def main():
         return
 
     try:
-        circuitpython_drive = utils.find_drive_by_name("CIRCUITPY")
-    except:
+        circuitpython_drive = wintertools.fs.find_drive_by_name("CIRCUITPY")
+    except EnvironmentError:
         circuitpython_drive = None
 
     if not circuitpython_drive:

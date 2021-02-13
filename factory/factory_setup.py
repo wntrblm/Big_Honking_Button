@@ -53,8 +53,8 @@ def deploy_circuitpython_code(destination=None):
         print("Waiting for CIRCUITPY drive...")
         destination = wintertools.fs.wait_for_drive("CIRCUITPY")
 
-    print("Forcing BHB into repl (workaround for CircuitPython issue #3986)")
-    wintertools.circuitpython.force_into_repl(USB_DEVICE_ID)
+        print("Forcing BHB into repl (workaround for CircuitPython issue #3986)")
+        wintertools.circuitpython.force_into_repl(USB_DEVICE_ID)
 
     print("Cleaning temporary files from src directories...")
     wintertools.fs.clean_pycache(FIRMWARE_DIR)
@@ -65,9 +65,10 @@ def deploy_circuitpython_code(destination=None):
     print("Copying files...")
     wintertools.fs.deploy_files(FILES_TO_DEPLOY, destination)
 
-    print("Done copying files, resetting...")
-    wintertools.circuitpython.reset_via_serial(USB_DEVICE_ID)
-    print("Done!")
+    if not destination:
+        print("Done copying files, resetting...")
+        wintertools.circuitpython.reset_via_serial(USB_DEVICE_ID)
+        print("Done!")
 
 
 def main():

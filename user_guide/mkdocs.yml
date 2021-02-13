@@ -1,7 +1,7 @@
 site_name: Winterbloom Big Honking Button User Guide
 copyright: "© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0"
 repo_url: "https://github.com/theacodes/Winterbloom-Big-Honking-Button"
-edit_uri: edit/master/user_guide/docs
+edit_uri: edit/main/user_guide/docs
 theme:
   name: winterbloom
 markdown_extensions:
@@ -16,6 +16,11 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.magiclink
   - md_in_html
+  - markdown_link_attr_modifier:
+      external_only: True
+      custom_attrs:
+        rel: "noopener"
+        referrerpolicy: "origin"
 nav:
   - "User Guide": index.md
   - "Kit Build Instructions": build.md

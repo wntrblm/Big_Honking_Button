@@ -134,7 +134,8 @@ class BigHonkingButton:
 
     def play(self, sample, pitch_cv=None, loop=False):
         if pitch_cv is not None:
-            sample.sample_rate = int(44100 * pow(2, pitch_cv))
+            sample_rate = min(int(44100 * pow(2, pitch_cv)), (350000 - 1))
+            sample.sample_rate = sample_rate
         self.audio_out.stop()
         self.audio_out.play(sample, loop=loop)
 

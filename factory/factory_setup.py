@@ -41,7 +41,7 @@ def program_firmware():
     wintertools.fw_fetch.latest_bootloader(DEVICE_NAME)
     firmware_path = wintertools.fw_fetch.latest_circuitpython(DEVICE_NAME)
 
-    wintertools.uf2_to_bin(firmware_path)
+    wintertools.uf2_to_bin.with_file(firmware_path)
 
     wintertools.jlink.run(JLINK_DEVICE, JLINK_SCRIPT)
 
@@ -78,7 +78,7 @@ def main():
 
     try:
         circuitpython_drive = wintertools.fs.find_drive_by_name("CIRCUITPY")
-    except EnvironmentError:
+    except RuntimeError:
         circuitpython_drive = None
 
     if not circuitpython_drive:

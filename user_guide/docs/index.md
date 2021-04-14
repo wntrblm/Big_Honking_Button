@@ -65,7 +65,7 @@ When connected to your computer, Big Honking Button shows up as a small drive na
 If you don't have a text editor - that's okay! While you could use Notepad (Windows) or TextEdit (Mac), these can sometimes have issues with CircuitPython devices like Big Honking Button. I'd recommend [installing Mu](https://learn.adafruit.com/welcome-to-circuitpython/installing-mu-editor) if you're new to this whole world. You can read more about editing code for CircuitPython in [Adafruit's guide](https://learn.adafruit.com/welcome-to-circuitpython/creating-and-editing-code).
 
 As a way to get your feet let's change how the Big Honking Button behaves. By default, when you press the button it plays the *entire* sample, even if you release the button while the sample is still playing (this is **trigger mode**). This will make it where the sample will stop as soon as you let go of the button (or **gate** mode).
- 
+
 In the `code.py` you should see some code that looks like this (it's at the bottom):
 
 ```python
@@ -151,6 +151,17 @@ Big Honking Button is completely open source and hacking is encouraged.
 * [CircuitPython][CircuitPython] is available under the [MIT License](https://github.com/adafruit/circuitpython/blob/main/LICENSE).
 
 ![Open Source Hardware Association mark](images/oshw.svg){class=oshw} Big Honking Button is [certified open source hardware](https://certification.oshwa.org/us000678.html).
+
+
+## Warranty, disclaimers, and limits
+
+Modules purchased from Winterbloom have a warranty of six months from the date of purchase. This warranty covers any manufacturing defects in the module. It does not cover damage from due to incorrect handling, storage, or power, overvoltage events, or modifications.
+
+Please [contact us](mailto:support@winterbloom.com) if you are experiencing issues with your module. Modules returned under warranty will either be refunded, replaced, or repaired at our discretion. You will be responsible for the cost of returning the module to Winterbloom.
+
+Because Eurorack has a vast number of possible combinations of power supplies, modules, cases, and accessories, it is impossible for us to guarantee compatibility with every possible configuration. We make a reasonable effort to test modules with several power supplies, cases, and other modules.
+
+We encourage tinkering, however, we will not refund, repair, or replace any products that have been modified.
 
 
 ## Acknowledgments and thanks

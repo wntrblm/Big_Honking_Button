@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-		
-		<link rel="shortcut icon" href="/favicon.ico">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+         
 
-    <title>User Guide - Winterbloom Big Honking Button User Guide</title>
+		<link rel="shortcut icon" sizes="192x192" href="/icon.png" />
+		<link rel="apple-touch-icon" sizes="192x192" href="/icon.png" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+        <title>
+            User Guide - Winterbloom Big Honking Button User Guide
+        </title>
 
-    <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
+        <!-- Bulma CSS framework -->
+        <link href="bulma.min.css" rel="stylesheet" />
 
-    <!-- Syntax highlighting css -->
-		<link href="pygments.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="style.css" rel="stylesheet" />
 
-  </head>
-  <body>
-    <div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="." title="Home">
-					<img src="winterbloom-logo.png" height="30" class="d-inline-block align-middle" alt="Winterbloom" loading="lazy">
-				</a>
-				
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-					<div class="navbar-nav">
-						
-							<a class="nav-link" href=".">User Guide</a>
-						
-							<a class="nav-link" href="build/">Kit Build Instructions</a>
-						
+        <!-- Syntax highlighting css -->
+        <link href="pygments.css" rel="stylesheet" />
+    </head>
+    <body>
+		<header>
+			<nav class="navbar" role="navigation" aria-label="main navigation">
+				<div class="container is-max-desktop">
+					<div class="navbar-brand">
+						<a class="navbar-item" href="." title="Home">
+							<img src="winterbloom-logo.png" alt="Winterbloom logo" height="28">
+						</a>
+
+						<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar_menu">
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+						</a>
+					</div>
+
+					<div class="navbar-menu" id="navbar_menu">
+						<div class="navbar-end">
+							
+							
+							<a class="navbar-item active" href=".">User Guide</a>
+							
+							<a class="navbar-item " href="build/">Kit Build Instructions</a>
+							
+							
+						</div>
 					</div>
 				</div>
-				
 			</nav>
+		</header>
 
-			<article>
-				<h1 id="big-honking-button-user-guide">Big Honking Button User Guide<a class="headerlink" href="#big-honking-button-user-guide" title="Permanent link">#</a></h1>
+        <section class="section">
+            <div class="container is-max-desktop">
+                <article class="content"><h1 id="big-honking-button-user-guide">Big Honking Button User Guide<a class="headerlink" href="#big-honking-button-user-guide" title="Permanent link">#</a></h1>
 <p>Big Honking Button is, well, a big button that honks. Okay, that's not all- it’s actually a simple sampler in a very silly package. It has pitch CV, gate in, gate out, and you can store up to 4mb of samples on it.</p>
 <h2 id="getting-support-and-help">Getting support and help<a class="headerlink" href="#getting-support-and-help" title="Permanent link">#</a></h2>
 <p>We want you to have a wonderful experience with your module. If you need help or run into problems, please reach out to us. Email is the best way for product issues, whereas Discord and GitHub are great for getting advice and help on how to customize your module.</p>
@@ -164,22 +179,29 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
 <p>Because Eurorack has a vast number of possible combinations of power supplies, modules, cases, and accessories, it is impossible for us to guarantee compatibility with every possible configuration. We make a reasonable effort to test modules with several power supplies, cases, and other modules.</p>
 <p>We encourage tinkering, however, we will not refund, repair, or replace any products that have been modified.</p>
 <h2 id="acknowledgments-and-thanks">Acknowledgments and thanks<a class="headerlink" href="#acknowledgments-and-thanks" title="Permanent link">#</a></h2>
-<p>Big Honking Button would not be possible without the help of the CircuitPython community and Adafruit Industries.</p>
-			</article>
+<p>Big Honking Button would not be possible without the help of the CircuitPython community and Adafruit Industries.</p></article>
+            </div>
+        </section>
 
-			<footer>
-				<p class="copyright">
-					© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0
-				</p>
+
+		<footer class="footer">
+			<div class="container is-max-desktop">
+				<p class="copyright">© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0</p>
 				<p class="edit-me">
-					Found an issue? <a href="mailto:support@winterbloom.com">Send us a message</a> or <a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/main/user_guide/docs/index.md">Edit this page on GitHub</a>.
+					Found an issue?
+					<a href="mailto:support@winterbloom.com"
+						>Send us a message</a
+					>
+					or
+					<a href="https://github.com/theacodes/Winterbloom-Big-Honking-Button/edit/main/user_guide/docs/index.md">Edit this page on GitHub</a
+					>.
 				</p>
 				<p class="updated">
-					Last updated on April 14, 2021
+					Last updated on May 08, 2021
 				</p>
-			</footer>
-		</div>
-	</body>
+			</div>
+		</footer>
+    </body>
 
-	<script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </html>

@@ -1,5 +1,5 @@
 # Sample player that holds multiple samples.
-# The CV input selects which sample is plays.
+# Uses the CV input to select current sample.
 
 import winterbloom_bhb
 

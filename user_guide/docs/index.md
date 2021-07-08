@@ -101,6 +101,7 @@ Big Honking Button can do all sorts of things! We've made a few examples to get 
 
 1. [Cycle example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cycle.py): Shows how to load multiple samples and cycle between them.
 1. [Random example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/random.py): Shows how to load multiple samples and choose one at random.
+1. [CV select example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cv_select.py): Shows how to load multiple samples and use the CV input to select which one to play.
 1. [Tap tempo example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/tap_tempo.py): Shows how to use the button to set the tempo and have the module play back a sample at each beat.
 1. [Sine example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/sine.py): An advanced example that shows how to generate a custom waveform.
 1. [Noise example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/noise.py): An advanced example that shows how to generate noise.

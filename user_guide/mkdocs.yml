@@ -1,26 +1,26 @@
 site_name: Winterbloom Big Honking Button User Guide
+site_url: https://honk.wntr.dev
 copyright: "© 2020 Winterbloom, licensed under Creative Commons CC BY-SA 4.0"
-repo_url: "https://github.com/theacodes/Winterbloom-Big-Honking-Button"
+repo_url: "https://github.com/wntrblm/Big_Honking_Button"
 edit_uri: edit/main/user_guide/docs
 theme:
-  name: winterbloom
+    name: winterbloom
 markdown_extensions:
-  - admonition
-  - def_list
-  - attr_list
-  - toc:
-      permalink: "#"
-      toc_depth: 2
-  - pymdownx.highlight:
-      use_pygments: True
-  - pymdownx.superfences
-  - pymdownx.magiclink
-  - md_in_html
-  - markdown_link_attr_modifier:
-      external_only: True
-      custom_attrs:
-        rel: "noopener"
-        referrerpolicy: "origin"
+    - admonition
+    - def_list
+    - attr_list
+    - toc:
+          permalink: "#"
+          toc_depth: 2-3
+    - pymdownx.highlight:
+          use_pygments: True
+    - pymdownx.superfences
+    - pymdownx.magiclink
+    - md_in_html
+    - markdown_link_attr_modifier:
+          new_tab: "external_only"
+          custom_attrs:
+              referrerpolicy: "origin"
 nav:
-  - "User Guide": index.md
-  - "Kit Build Instructions": build.md
+    - "User Guide": index.md
+    - "Kit Build Instructions": build.md

@@ -71,10 +71,14 @@ class BigHonkingButton:
             self._pitch_in.direct_calibration(
                 {4068: -5.0, 3049: -2.5, 2025: 0, 1001: 2.5, 8: 5.0}
             )
+            self.min_cv = -5.0
+            self.max_cv = 5.0
         else:
             self._pitch_in.direct_calibration(
                 {4068: -2.0, 3049: -1.0, 2025: 0, 1001: 1.0, 8: 2.0}
             )
+            self.min_cv = -2.0
+            self.max_cv = 2.0
 
         self.audio_out = audioio.AudioOut(board.HONK_OUT)
 
@@ -141,3 +145,16 @@ class BigHonkingButton:
 
     def stop(self):
         self.audio_out.stop()
+
+    def select_from_list_using_cv(self, list, cv, low=None, high=None):
+        if low is None:
+            low = self.min_cv
+        if high is None:
+            high = self.max_cv
+
+        cv = min(high, max(low, cv))
+        count = len(list)
+        span = high - low
+        value = cv - low
+        index = int((value / span) * count)
+        return list[index]

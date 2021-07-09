@@ -90,7 +90,7 @@ The use the rubber band to hold the panel onto the jacks and board. Place it bet
 
 ![Rubber band placed](images/kit/3a-jack-alignment.jpg)
 
-Double (or triple) it over to make sure its taught.
+Double (or triple) it over to make sure it's taut.
 
 ![Rubber band pulled taught](images/kit/3b-jack-alignment.jpg)
 

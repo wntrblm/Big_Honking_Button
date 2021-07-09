@@ -8,172 +8,218 @@ This build is a **beginner level** kit. Some soldering experience is helpful but
 
 ## Tools and materials required
 
-Tools:
+Before jumping in, make sure you have:
 
 * A soldering iron, like [this one](https://www.adafruit.com/product/180)
-* A stiff brush. An old toothbrush will work great.
-* (optional) A hot air station ([like this](https://www.adafruit.com/product/1869)). If you don't have one, have a lighter handy.
-
-Materials:
-
-* Solder, we can recommend [Adafruit's 60/40 rosin core solder](https://www.adafruit.com/product/145).
-* Isopropyl alcohol, 70% or higher.
+* Solder, we can recommend [Adafruit's 60/40 **no-clean** rosin core solder](https://www.adafruit.com/product/145). We suggest using soldering with "no clean" flux. If you do use a different kind of flux, be sure to carefully clean the flux residue off based on the guidelines provided by the manufacturer of your solder.
+* A lighter, candle, or some other heat source for the shrink wrap. A [hot air station](https://www.adafruit.com/product/1869) is ideal, not not necessary.
 
 ## Kit contents
 
 Your kit should contain the following items. If any are missing please email us at support@winterbloom.com.
 
-![Kit contents](images/kit-contents.jpg)
+<object
+    alt="Kit contents"
+    data-is-svg-map
+    data-list="kit-contents-img-datalist"
+    data-stylesheet="/styles/kit-contents-svgmap.css"
+    data-info-text-template="kit-contents-img-info-text"
+    data="/images/kit/1-kit.svg"
+    height="100%"
+    id="kit-contents-img"
+    type="image/svg+xml"
+    width="100%">
+</object>
+<template id="kit-contents-img-info-text">
+    <g id="info-text-container">
+        <rect data-size-to="info-text"></rect>
+        <text id="info-text">Test test test</text>
+    </g>
+</template>
+<datalist id="kit-contents-img-datalist">
+    <option value="power-cable">Eurorack power cable (1)</option>
+    <option value="panel">Front panel (1)</option>
+    <option value="retainer">Retaining ring (1)</option>
+    <option value="pcb">Mainboard (1)</option>
+    <option value="wire-harness">Wiring harness (1)</option>
+    <option value="jst">JST header (1)</option>
+    <option value="rubber-band">Rubber band (1)</option>
+    <option value="screws">M3x6 screws (2)</option>
+    <option value="heat-shrink">Heat shrink (2)</option>
+    <option value="nuts">Hex nuts for the 1/8" jacks (4)</option>
+    <option value="jacks">1/8" jacks (4)</option>
+    <option value="power-header">Eurorack power header (1)</option>
+    <option value="button">SANWA arcade button (1)</option>
+</datalist>
+<script type="module" src="/scripts/svgmap.js"></script>
+<link rel="stylesheet" href="/styles/svgmap.css"/>
 
-- (1) Big Honking Button printed circuit board (PCB)
+- (1) Panel
 - (1) SANWA arcade button
-- (1) Button wiring harness (purple with white connector)
+- (1) Big Honking Button mainboard
+- (1) Button wiring harness
 - (2) Short pieces of heat-shrink tubing
 - (1) 10-pin Eurorack power connector (black)
-- (1) 2-pin JST connector (green)
+- (1) 2-pin JST header (green)
 - (4) 1/8" jacks
 - (4) Hex nuts for the 1/8" jacks
-- (1) Panel
-- (1) Extra-special rubber band (not pictured)
-- (1) Eurorack power cable (not pictured)
-- (2) M3 screws for attaching the module to your rack (not pictured)
+- (1) Retaining ring (colors vary)
+- (1) Rubber band
+- (1) Eurorack power cable
+- (2) M3 screws for attaching the module to your rack
 
+We program, test, and calibrate the mainboard before sending it to you, so you don't have to worry about any of that- once you're done building you'll be good to go!
 
 # Soldering the jacks
 
-The first step is to solder the 1/8" jacks on to the printed circuit board (PCB).
+The first step is to solder the 1/8" jacks on to the mainboard.
 
-![Jacks and printed circuit board](images/jacks-before.jpg)
+![Jacks and printed circuit board](images/kit/2-jacks.jpg)
 
-Place the jacks onto the **front** side of the board. Note that this side has the outline of the jacks on it.
+Place the jacks onto the **front** side of the board. The front side has the outline of the jacks printed on it, so it should be easy to spot!
 
-![Jacks placed onto the board](images/jacks-placed.jpg)
+![Placing jacks on the board](images/kit/2b-jacks.jpg)
 
-Hold the jacks in place and carefully turn the board over. Double check and make sure the jacks are all flush with the PCB.
+![Jacks placed onto the board](images/kit/2d-jacks.jpg)
 
-![Jacks placed and board flipped](images/jacks-flipped.jpg)
+Once the jacks are placed, you can use the panel to hold them in place while soldering them. Place the panel over the top of the jacks:
 
-Now you can solder each of the pins from the jacks to the board. There are three per jack for a total of twelve.
+![Panel over jacks](images/kit/3-jack-alignment.jpg)
+
+The use the rubber band to hold the panel onto the jacks and board. Place it between the two rows of jacks.
+
+![Rubber band placed](images/kit/3a-jack-alignment.jpg)
+
+Double (or triple) it over to make sure its taught.
+
+![Rubber band pulled taught](images/kit/3b-jack-alignment.jpg)
 
 !!! note "Tip"
-    If you have some [helping hands](https://www.adafruit.com/product/291) or a [PCB clamp](https://hakkousa.com/products/accessories/pcb-holders/omnivise-pcb-holder.html), you can place it in there. You just have to be careful to make sure
-    that the jacks stay flush against the board. You can double-check after each solder joint and adjust them if necessary.
+    Make sure that the jacks are flush against the board before soldering. You can double-check after each solder joint and adjust them if necessary.
 
+Now you can solder each of the pins from the jacks to the board. Take care not to burn the rubber band.
 
-![Jacks soldered](images/jacks-soldered.jpg)
+![Soldering the jacks](images/kit/4-soldering-jacks.jpg)
+
+There are three solder joints per jack for a total of twelve.
+
+![Soldering the jacks](images/kit/4a-soldering-jacks.jpg)
 
 
 # Soldering the JST connector
 
 Next you'll need to solder the green JST connector to the PCB.
 
-![JST Connector](images/jst.jpg)
+![JST Connector](images/kit/5a-jst.jpg)
 
-The JST connector goes on the **back** side of the board.
+Unlike the jacks, The JST connector goes on the **back** side of the board, next to where the power header goes.
 
-![JST Connector placed](images/jst-placed.jpg)
+![JST Connector placed](images/kit/5b-jst.jpg)
 
-Note the orientation of the connector. It shouldn't be overhanging the board, it should come right up to the edge.
+Pay special attention to the orentation of the JST connector. It only goes on correctly one way- It shouldn't be overhanging the board, it should come right up to the edge.
 
-![Correct placement of connector](images/jst-correct.jpg){: class="float-left" }
-![incorrect placement of connector](images/jst-incorrect.jpg){: class="float-right" }
+![Correct placement of connector](images/kit/5c-jst.jpg){: class="float-left" }
+![incorrect placement of connector](images/kit/5d-jst.jpg){: class="float-right" }
 
-Just like with the 1/8" jacks, flip the board over and solder the two pins of the JST connector to the board. Make sure the connector is flush with the board. You can use a piece of tape to hold it in place.
+<div style="clear: both;"></div>
 
-![JST connector soldered](images/jst-soldered.jpg)
+Just like with the 1/8" jacks, flip the board over and solder the two pins of the JST connector to the board. Make sure the connector is flush with the board after making the first solder joint. If needed, you can use a piece of tape to hold it in place.
+
+![Soldering the JST header](images/kit/6-soldering-jst.jpg)
+
 
 ## Soldering the power connector
 
 Next up is the 10-pin Eurorack power connector.
 
-![Power connector](images/power.jpg)
+![Power connector](images/kit/7a-power.jpg)
 
 The power connector also goes on the **back** side of the board. When placing **note the notch in the outline on the board**. You'll need to make sure the **slot on the connector matches where the notch is on the outline**. The slot should be facing the edge of the board.
 
-![Power connector placed](images/power-placed.jpg)
+![Power connector placed](images/kit/7b-power.jpg)
 
-Once placed you can solder the 10 pins on the other side of the board. Be careful here and avoid touching the small components near the pins with your iron.
+Once placed you can solder the 10 pins on the other side of the board. Be careful here and avoid touching the small components near the pins with your iron. Check and make sure the connector is flush with the board as you go.
 
-![Power connector soldered](images/power-soldered.jpg)
+![Power connector soldering](images/kit/8a-soldering-power.jpg)
 
-
-## Cleaning the board
-
-At this point your board probably has some icky soldering residue on it. You can clean that using the isopropyl alcohol and the stiff brush. Just wet the brush a little with the alcohol and give the board a scrub. Do not use water, soap, or anything else to clean the board. Allow the board to dry completely before trying to use it.
+![Power connector soldered](images/kit/8b-soldering-power.jpg)
 
 
 ## Soldering the wire harness to the button
 
-Set the board aside for a moment. The next step is to attach the wire harness to the button. You'll need the button, wire harness, and the two small pieces of heat shrink tubing.
+Set the board aside for a moment because the next step is to attach the wire harness to the button. You'll need the button, wire harness, and the two small pieces of heat shrink tubing.
 
-![Wire harness, button, and heat shrink tubing](images/wire-harness-and-button.jpg)
+![Wire harness, button, and heat shrink tubing](images/kit/9a-button.jpg)
 
-Place the two pieces of heat-shrink tubing onto the two wires on the wire harness. Push them all the way to the white connector.
+First, place the two pieces of heat-shrink tubing onto the two wires on the wire harness. Push them all the way to the white connector for now.
 
-![Heat-shrink placed on harness](images/heat-shrink-placed.jpg)
+![Heat-shrink placed on harness](images/kit/9b-button.jpg)
 
-Carefully solder one of the wires from the harness onto the lugs on the button. You may need to get a friend to hold the button for you. **Make sure the heat-shrink tubing stay on the wire**.
 
-![One wire soldered to the button](images/button-soldered.jpg)
 
-Repeat for the other wire and lug. Once again, make sure that the heat-shrink tubing stays on the wire.
+Carefully solder the wires from the harness onto the lugs on the button one at a time. You may need to get a friend to hold the button for you to keep it from moving around. Make sure the heat-shrink tubing stays on the wires.
 
-![Two wires soldered to the button](images/button-soldered-2.jpg)
+![Button soldered](images/kit/9c-button.jpg)
 
-Now you can push the heat-shrink tubing over the solder joints and the lugs to cover the connections.
+Now you can push the heat-shrink tubing over the solder joints and the lugs to cover the connections. Use your lighter, candle, hot air station to shrink the tubing over the connectors.
 
-![Heat shrink over the lugs](images/heat-shrink-placed-2.jpg)
+![Button soldered](images/kit/9d-button.jpg)
 
-Using a hot air station (set to no higher than 150 degrees celsius) or a lighter (very carefully) apply heat to the heat-shrink tubing to shrink it over the lug. It will not completely shrink around the wire side so **do not** apply excess heat - you will melt the wire's sleeving.
+!!! warning "Careful"
+    The heat shrink will not completely shrink around the wire side so **do not** apply excess heat - you can melt the wire's sleeving. If using a hot air station set the temperature to no higher than 150°C.
 
-![Heat shrink shrunk](images/heat-shrunk.jpg)
 
-## Putting it all together
+## Putting the button in the panel
 
-All of the soldering is complete! You can put away the soldering iron. The next steps are putting it all together.
+All of the soldering is complete! You can put away the soldering iron.
 
-First, place the button's wires through the large hole in front side of the panel.
+The next step it to place the button snugly into the panel. Push the wires through the big hole in the panel:
 
-![Wires through hole](images/wires-through-panel.jpg)
+![Button wires through panel](images/kit/10a-button-placement.jpg)
 
-Push the button into the hole - it should snap into place.
+Then push the button into the hole - it should snap into place.
 
-![Button placed in panel](images/button-placed.jpg)
+![Button in panel](images/kit/10b-button-placement.jpg)
 
-Flip the panel over so that you can see the back part of the button.
+Flip the panel over so that you can see the back part of the button and grab the small plastic retaining ring. Note that your ring might be a different color:
 
-![Panel flipped](images/button-backside.jpg)
+![Retaining ring](images/kit/11a-ring.jpg)
 
-Place the rubber band around the button.
+Slip the ring over the wires:
 
-![Rubber band around the button](images/rubber-band-placed.jpg)
+![Retaining ring through wires](images/kit/11b-ring.jpg)
 
-And then double up the rubber band around the button. Make sure the rubber band is as close to the panel as possible. This will hold the button snugly in place so that it doesn't wiggle when you use it.
+And then push the ring firmly over the button. It should click into place with a satisfying snap and the button should now be snug as a bug in a rug.
 
-![Rubber band wrapped around button](images/rubber-band-wrapped.jpg)
+![Retaining ring in place](images/kit/11c-ring.jpg)
 
-Now you can connect the button's white connector to the green JST header on the board. Place it so that the tab on the connector matches the notch in the header.
+## Secure the panel
 
-![JST connector placed](images/jst-to-board-placed.jpg)
+Now that the button is in place you can secure the panel to the mainboard. Just like you did when soldering on the jacks, place the panel over the jacks and push them through the panel:
 
-One aligned, apply some pressure to snap the connector into the header. It will lock in place.
+![Jack and panel](images/kit/12a-nuts.jpg)
 
-![JST connector with pressure applied](images/jst-to-board-pushed.jpg)
+Now take the hex nuts and screw them onto the jacks:
 
-Next, align the 1/8" jacks on the board to the matching holes on the panel and push them through the panel.
+![Placing hex nuts on the panel](images/kit/12b-nuts.jpg)
 
-![Board aligned to panel](images/board-to-panel.jpg)
-![Panel with jacks pushed through](images/jacks-ready-for-nuts.jpg)
+Don't over-tighten - finger tight is generally good enough.
 
-Grab the four hex nuts and tighten them around each 1/8" jack, securing the panel to the board.
+![Hex nuts finished](images/kit/12c-nuts.jpg)
 
-![Hex nuts](images/hex-nuts.jpg)
+## Connect the button
+
+Now you can connect the button's white connector to the green JST header on the board. Place it so that the tab on the connector matches the notch in the header and push it into place:
+
+![JST connector placed](images/kit/13a-connect.jpg)
+
+Make sure to push the connector all the way in. It should snap in and hold in place.
 
 ## All done
 
-Congratulations! You've finished your Big Honking Button!
+Congratulations! You've finished your very own Big Honking Button!
 
-![All done](images/finished.jpg)
+![All done](images/kit/14a-finished.jpg)
 
 Now that it's all put together go check out the [User's Guide](/index) and please show us your work by tweeting at [@wntrblm](https://twitter.com/wntrblm) or tagging [@wntrblm](https://instagram.com/wntrblm) in your instagram post.
 

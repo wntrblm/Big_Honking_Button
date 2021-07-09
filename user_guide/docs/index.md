@@ -34,11 +34,11 @@ And two outputs:
 With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by [modifying the code](#modifying-the-code).
 
 !!! note "Revision differences"
-Big Honking Buttons manufactured prior to 2021 (v4 and lower) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.
+    Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.
 
 ## Changing the sample
 
-You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can **not** be powered over USB alone).
+You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work - the module doesn't draw any power from the USB port.
 
 Samples must be in mono, 16-bit, 44.1kHz, signed `wav` files. Adafruit has an [excellent guide on how to convert sound files](https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files), though your sample can be 44.1kHz and not 22kHz.
 
@@ -97,7 +97,13 @@ If you want to you can learn more about [CircuitPython](https://learn.adafruit.c
 
 ## Examples
 
-Big Honking Button can do all sorts of things! We've made a few examples to get you started. If you want to use these, copy their contents to `code.py` on the `CIRCUITPY` drive. **Be sure to save it as the correct name,** if you don't name it `code.py` it won't change anything. If you want to restore the original `code.py` it is [here](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py).
+Big Honking Button can do all sorts of things! We've made a few examples to show you some of the things it can do:
+<video controls="" width="100%" style="margin: 1.5em 0;">
+    <source src="https://storage.googleapis.com/files.winterbloom.com/marketing/honk-examples.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+To use these examples, connect your Big Honking Button to your computer just like you would when [modifying the code](#modifying-the-code). Once connected, copy the contents of the example you want to try (linked below) to `code.py` on the `CIRCUITPY` drive. **Be sure to save it as the correct name,** if you don't name it `code.py` it won't change anything. If you want to restore the original `code.py` it is [here](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py).
 
 1. [Cycle example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cycle.py): Shows how to load multiple samples and cycle between them.
 1. [Random example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/random.py): Shows how to load multiple samples and choose one at random.

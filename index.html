@@ -89,10 +89,10 @@
 <p>With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by <a href="#modifying-the-code" referrerpolicy="origin">modifying the code</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Revision differences</p>
+<p>Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.</p>
 </div>
-<p>Big Honking Buttons manufactured prior to 2021 (v4 and lower) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.</p>
 <h2 id="changing-the-sample">Changing the sample<a class="headerlink" href="#changing-the-sample" referrerpolicy="origin" title="Permanent link">#</a></h2>
-<p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work (the module itself can <strong>not</strong> be powered over USB alone).</p>
+<p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work - the module doesn't draw any power from the USB port.</p>
 <p>Samples must be in mono, 16-bit, 44.1kHz, signed <code>wav</code> files. Adafruit has an <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/convert-files" referrerpolicy="origin" rel="noopener" target="_blank">excellent guide on how to convert sound files</a>, though your sample can be 44.1kHz and not 22kHz.</p>
 <p>To modify the sample that plays:</p>
 <ol>
@@ -134,7 +134,13 @@
 <p>Big Honking Button can store multiple samples and you can use various means to change how they're triggered. We'll be adding a sample showing just that soon, but don't be afraid to experiment and reach out if you need any help!</p>
 <p>If you want to you can learn more about <a href="https://learn.adafruit.com/welcome-to-circuitpython/overview" referrerpolicy="origin" rel="noopener" target="_blank">CircuitPython</a> to the most of your module. Also, please come chat on the <a href="https://discord.gg/UpfqghQ" referrerpolicy="origin" rel="noopener" target="_blank">Discord</a> where you can ask questions and see what others are doing with their Big Honking Button!</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" referrerpolicy="origin" title="Permanent link">#</a></h2>
-<p>Big Honking Button can do all sorts of things! We've made a few examples to get you started. If you want to use these, copy their contents to <code>code.py</code> on the <code>CIRCUITPY</code> drive. <strong>Be sure to save it as the correct name,</strong> if you don't name it <code>code.py</code> it won't change anything. If you want to restore the original <code>code.py</code> it is <a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py" referrerpolicy="origin" rel="noopener" target="_blank">here</a>.</p>
+<p>Big Honking Button can do all sorts of things! We've made a few examples to show you some of the things it can do:</p>
+<video controls="" width="100%" style="margin: 1.5em 0;">
+    <source src="https://storage.googleapis.com/files.winterbloom.com/marketing/honk-examples.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+<p>To use these examples, connect your Big Honking Button to your computer just like you would when <a href="#modifying-the-code" referrerpolicy="origin">modifying the code</a>. Once connected, copy the contents of the example you want to try (linked below) to <code>code.py</code> on the <code>CIRCUITPY</code> drive. <strong>Be sure to save it as the correct name,</strong> if you don't name it <code>code.py</code> it won't change anything. If you want to restore the original <code>code.py</code> it is <a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py" referrerpolicy="origin" rel="noopener" target="_blank">here</a>.</p>
 <ol>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cycle.py" referrerpolicy="origin" rel="noopener" target="_blank">Cycle example</a>: Shows how to load multiple samples and cycle between them.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/random.py" referrerpolicy="origin" rel="noopener" target="_blank">Random example</a>: Shows how to load multiple samples and choose one at random.</li>
@@ -198,7 +204,7 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
 					>.
 				</p>
 				<p class="updated">
-					Last updated on July 08, 2021
+					Last updated on July 09, 2021
 				</p>
 			</div>
 		</footer>

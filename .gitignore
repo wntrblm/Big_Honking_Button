@@ -12,3 +12,6 @@ dist
 .vscode
 .nox
 .coverage
+.cache
+logs/
+factory/distribution

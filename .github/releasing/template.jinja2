@@ -1,0 +1,15 @@
+This is a bugfix & maintenance release for Big Honking Button's CircuitPython libraries.
+
+👉 **TL;DR download [big-honking-button-{{tag}}.zip](https://github.com/{{repo}}/releases/download/{{tag}}/big-honking-button-{{tag}}.zip) and extract it to your `CIRCUITPY` drive**  👈
+
+Please follow the [firmware upgrade instructions](https://honk.wntr.dev/#updating-the-firmware) in the user's guide to upgrade your device's firmware and libraries.
+
+## Changes from {{last_release}}
+
+{%- for category, category_changes in changes.items() %}
+
+{{category}}:
+{% for change in category_changes %}
+* {{change.capitalize()}}
+{%- endfor %}
+{%- endfor %}

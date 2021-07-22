@@ -24,17 +24,17 @@ To install this into your Eurorack setup:
 Big Honking Button has two inputs:
 
 -   A gate / trigger in
--   A pitch CV in that is 1v/Oct with a -5v to +5v range<sup>see note</sup>
+-   A pitch CV in that is 1v/Oct with a `-5v` to `+5v` range<sup>see note</sup>
 
 And two outputs:
 
--   A gate / trigger out (0v or 5v)
+-   A gate / trigger out (`0v` or `5v`)
 -   An audio out
 
 With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by [modifying the code](#modifying-the-code).
 
 !!! note "Revision differences"
-    Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.
+    Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of `-2v` to `+2v`. More than that won't damage the module, but it won't be able to measure anything outside of that range.
 
 ## Changing the sample
 
@@ -91,7 +91,7 @@ Okay, save the file! Your Big Honking Button should restart and now it should st
 
 **Congrats**, you've made your first change to how the module works! 🎉
 
-Big Honking Button can store multiple samples and you can use various means to change how they're triggered. We'll be adding a sample showing just that soon, but don't be afraid to experiment and reach out if you need any help!
+Big Honking Button can do all sorts of neat stuff by changing its code. Check out the [examples](#examples) or jump in the deep end with the [code reference](#code-reference). Don't be afraid to experiment and reach out if you need any help!
 
 If you want to you can learn more about [CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython/overview) to the most of your module. Also, please come chat on the [Discord][discord] where you can ask questions and see what others are doing with their Big Honking Button!
 
@@ -115,6 +115,8 @@ To use these examples, connect your Big Honking Button to your computer just lik
 1. [Sine example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/sine.py): An advanced example that shows how to generate a custom waveform.
 1. [Noise example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/noise.py): An advanced example that shows how to generate noise.
 
+If you're ready to go beyond the examples, check out the [code reference](#code-reference).
+
 ## Help! I changed some code and this thing isn't working!
 
 There's probably some sort of error in the program. Don't worry, you can get it figured out.
@@ -122,6 +124,163 @@ There's probably some sort of error in the program. Don't worry, you can get it 
 If you connect using the [serial console](https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console) you should be able to see the error. If you don't see it right away, you might need to reset the board (either by pressing the little button on the bottom of the module or power cycling your synth). Sometimes you can press `Ctrl+C` followed by `Ctrl+D` in the serial console to get the board to reset and tell you the error.
 
 In any case, reach out on [Discord][discord] and we can walk you through figuring out what went wrong.
+
+## Code reference
+
+Big Honking Button runs [CircuitPython](https://circuitpython.org) and provides a helpful `BigHonkingButton` class for accessing the hardware and features. The first thing that you'll do in your code is import that class and create an instance:
+
+```python
+import winterbloom_bhb
+
+bhb = winterbloom.BigHonkingButton()
+```
+
+In a lot of cases, the first thing you'll do with the `bhb` instance is load some samples:
+
+```python
+honk = bhb.load_sample("samples/honk.wav")
+clap = bhb.load_sample("samples/clap.wav")
+```
+
+Once you're all set up, you'll start the **update loop**:
+
+```python
+while bhb.update():
+    ...
+```
+
+This loop will repeat over and over. Each time the loop is run, `bhb.update()` is called and it will read in the state of the button, gate in, and CV input. You have to call `bhb.update()` otherwise it won't ever know if things change!
+
+### Inputs
+
+While inside the loop you can check the state of the various inputs. First, you can check if **either** the button has been pressed **or** the gate in has gone from low to high:
+
+```python
+if bhb.triggered:
+    ...
+```
+
+Similarly, you can check if **either** the button has been released **or** the gate has gone from high to low:
+
+```python
+if bhb.released:
+    ...
+```
+
+These two states are demonstrated in the [default example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py):
+
+```python
+while bhb.update():
+    if bhb.triggered:
+        bhb.play("honk.wav")
+
+    elif bhb.released:
+        bhb.stop()
+```
+
+You can get more specific by checking the button and gate independently. You
+can use the `button` property to check the button:
+
+```python
+if bhb.button.pressed:
+    # Button was just pressed.
+    ...
+
+if bhb.button.released:
+    # Button was just released.
+    ...
+
+if bhb.button:
+    # Button is held down.
+```
+
+Likewise, you can use the `gate_in` property to check the gate input:
+
+```python
+if bhb.gate_in.rising_edge:
+    # Gate in just moved from low to high.
+    ...
+
+if bhb.gate_in.falling_edge:
+    # Gate in just moved from high to low.
+    ...
+
+if bhb.gate_in:
+    # The gate input is being held high.
+```
+
+!!! Note "Aliases"
+    For convenience, `bhb.button` and `bhb.gate_in` have property aliases. `.pressed`, `.rising_edge`, and `.triggered` are all the same, likewise, `.released` and `.falling_edge` are the same.
+
+The pitch CV input is a little different. You can use `bhb.pitch_in` to read the *voltage* on the pitch CV input. Remember, the input range is `-5v` to `+5v`.
+
+```python
+if bhb.pitch_in > 0:
+    ...
+```
+
+More usefully you can use the pitch input to re-pitch the sample:
+
+```
+bhb.play(honk, pitch_cv=bhb.pitch_in)
+```
+
+There are other ways you can use the CV input, for instance, the [CV select example](https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cv_select.py) uses it to select from a list of samples.
+
+
+### Outputs
+
+Big Honking Button has two outputs: an audio out and a gate out. The audio out can be used to play previously-loaded samples:
+
+```python
+bhb.play(honk)
+```
+
+It can also play the sample repeatedly:
+
+```python
+bhb.play(honk, repeat=True)
+```
+
+And re-pitch the sample:
+
+```python
+# Play at twice the frequency
+bhb.play(honk, pitch_cv=2.0)
+
+# Play at half the frequency
+bhb.play(honk, pitch_cv=0.5)
+
+# Play at normal pitch
+bhb.play(honk, pitch_cv=1.0)
+```
+
+By default, the sample will play all the way through. If you want to stop the
+sample you can use `bhb.stop()`:
+
+
+```python
+if bhb.pressed:
+    bhb.play(some_long_sample)
+
+elif bhb.released:
+    bhb.stop()
+```
+
+When `stop()` is called the sample stops playing immediately - even if its in the middle of playback. If you play a new sample while a sample is playing, the old sample will stop immediately and the new one will start playing.
+
+Finally, there's the gate out:
+
+```python
+if bhb.pressed:
+    # Sets the output to +5v
+    bhb.gate_out = True
+
+elif bhb.released:
+    # Sets the output to 0v
+    bhb.gate_out = False
+```
+
 
 ## Updating the firmware
 

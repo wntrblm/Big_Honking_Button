@@ -20,8 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-import time
-
 import audiocore
 import audioio
 import board
@@ -55,16 +53,44 @@ class _AnalogIn:
         return _bhb.read_adc()
 
 
+class _InputState:
+    def __init__(self, pin):
+        self._in = digitalio.DigitalInOut(pin)
+        self._in.switch_to_input(pull=digitalio.Pull.UP)
+        self.state = False
+        self.last_state = False
+
+    def update(self):
+        self.last_state = self.state
+        self.state = not self._in.value
+
+    @property
+    def rising_edge(self):
+        return self.state and not self.last_state
+
+    @property
+    def falling_edge(self):
+        return not self.state and self.last_state
+
+    @property
+    def value(self):
+        return self.state
+
+    pressed = rising_edge
+    triggered = rising_edge
+    released = falling_edge
+    held = value
+    __bool__ = value
+
+
 class BigHonkingButton:
     def __init__(self):
         self.board_revision = _detect_board_revision()
-        self.pitch_settle_time = 0.001
-        self._button = digitalio.DigitalInOut(board.BUTTON)
-        self._button.switch_to_input(pull=digitalio.Pull.UP)
-        self._gate_in = digitalio.DigitalInOut(board.GATE_IN)
-        self._gate_in.switch_to_input()
+        self._button = _InputState(board.BUTTON)
+        self._gate_in = _InputState(board.GATE_IN)
         self._gate_out = digitalio.DigitalInOut(board.GATE_OUT)
         self._gate_out.switch_to_output()
+
         self._pitch_in = winterbloom_voltageio.VoltageIn(_AnalogIn())
 
         if self.board_revision >= 5:
@@ -82,20 +108,21 @@ class BigHonkingButton:
 
         self.audio_out = audioio.AudioOut(board.HONK_OUT)
 
-        self._last_gate_value = False
-        self._last_button_value = False
+    def update(self):
+        self._gate_in.update()
+        self._button.update()
+        return True
 
     @property
     def button(self):
-        return not self._button.value
+        return self._button
 
     @property
     def gate_in(self):
-        return not self._gate_in.value
+        return self._gate_in
 
     @property
     def pitch_in(self):
-        time.sleep(self.pitch_settle_time)
         return self._pitch_in.voltage
 
     @property
@@ -108,30 +135,11 @@ class BigHonkingButton:
 
     @property
     def triggered(self):
-        button_value = self.button
-        gate_value = self.gate_in
-        if (not self._last_button_value and button_value) or (
-            not self._last_gate_value and gate_value
-        ):
-            result = True
-        else:
-            result = False
-
-        self._last_button_value = button_value
-        self._last_gate_value = gate_value
-
-        return result
+        return self._button.triggered or self._gate_in.triggered
 
     @property
     def released(self):
-        button_value = self.button
-        gate_value = self.gate_in
-        if not button_value and not gate_value:
-            result = True
-        else:
-            result = False
-
-        return result
+        return self._button.released or self._gate_in.released
 
     def load_sample(self, path):
         return audiocore.WaveFile(open(path, "rb"))

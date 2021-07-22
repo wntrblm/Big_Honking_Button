@@ -25,7 +25,7 @@ last_sample_played = time.monotonic()
 last_button_press = time.monotonic()
 
 
-while True:
+while bhb.update():
     # Get the current time and see if enough
     # time has passed to play the sample.
     now = time.monotonic()

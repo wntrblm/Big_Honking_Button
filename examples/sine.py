@@ -22,7 +22,7 @@ def generate_sine_wave(volume=1.0):
 
     for i in range(length):
         samples[i] = int((1 + math.sin(math.pi * 2 * i / length)) * volume)
-    
+
     return samples
 
 sine_wave = generate_sine_wave(0.8)
@@ -35,7 +35,7 @@ frequency = 440
 sample.sample_rate = frequency * len(sine_wave)
 
 
-while True:
+while bhb.update():
     if bhb.triggered:
         bhb.gate_out = True
         bhb.play(sample, loop=True)

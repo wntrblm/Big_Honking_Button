@@ -8,7 +8,7 @@ import winterbloom_bhb
 bhb = winterbloom_bhb.BigHonkingButton()
 sample = bhb.load_sample("samples/honk.wav")
 
-while True:
+while bhb.update():
     if bhb.triggered:
         bhb.gate_out = True
         bhb.play(sample, pitch_cv=bhb.pitch_in)

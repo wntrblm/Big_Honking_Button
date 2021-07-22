@@ -19,7 +19,7 @@ def generate_noise(volume=1.0):
 
     for i in range(length):
         samples[i] = int(random.random() * volume)
-    
+
     return samples
 
 noise = generate_noise(0.8)
@@ -33,7 +33,7 @@ frequency = 2
 sample.sample_rate = frequency * len(noise)
 
 
-while True:
+while bhb.update():
     if bhb.triggered:
         bhb.gate_out = True
         bhb.play(sample, loop=True)

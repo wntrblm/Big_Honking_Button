@@ -16,7 +16,7 @@ samples = [
 
 current_sample_no = 0
 
-while True:
+while bhb.update():
     if bhb.triggered:
         bhb.gate_out = True
         bhb.play(samples[current_sample_no], pitch_cv=bhb.pitch_in)

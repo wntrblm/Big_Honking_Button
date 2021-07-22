@@ -15,7 +15,7 @@ samples = [
     bhb.load_sample("samples/snare.wav"),
 ]
 
-while True:
+while bhb.update():
     if bhb.triggered:
         # This selects a sample from the list based on the pitch CV input.
         # The samples are evenly distributed across the CV range,

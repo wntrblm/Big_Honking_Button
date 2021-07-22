@@ -12,7 +12,7 @@ samples = [
     bhb.load_sample("samples/clap.wav"),
 ]
 
-while True:
+while bhb.update():
     if bhb.triggered:
         bhb.gate_out = True
         bhb.play(random.choice(samples), pitch_cv=bhb.pitch_in)

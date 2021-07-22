@@ -79,17 +79,17 @@
 <p>Big Honking Button has two inputs:</p>
 <ul>
 <li>A gate / trigger in</li>
-<li>A pitch CV in that is 1v/Oct with a -5v to +5v range<sup>see note</sup></li>
+<li>A pitch CV in that is 1v/Oct with a <code>-5v</code> to <code>+5v</code> range<sup>see note</sup></li>
 </ul>
 <p>And two outputs:</p>
 <ul>
-<li>A gate / trigger out (0v or 5v)</li>
+<li>A gate / trigger out (<code>0v</code> or <code>5v</code>)</li>
 <li>An audio out</li>
 </ul>
 <p>With the default code, it will trigger the sample and play it through the audio out whenever the button is pressed or whenever the gate input is triggered. It will also set the gate out to high whenever the button is pressed or whenever the gate in is high. You can customize some of this behavior by <a href="#modifying-the-code" referrerpolicy="origin">modifying the code</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Revision differences</p>
-<p>Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of -2v to +2v. More than that won't damage the module, but it won't be able to measure anything outside of that range.</p>
+<p>Big Honking Buttons manufactured prior to 2021 (marked v4 on the backside) only have an input range of <code>-2v</code> to <code>+2v</code>. More than that won't damage the module, but it won't be able to measure anything outside of that range.</p>
 </div>
 <h2 id="changing-the-sample">Changing the sample<a class="headerlink" href="#changing-the-sample" referrerpolicy="origin" title="Permanent link">#</a></h2>
 <p>You can change the sample on Big Honking Button by connecting it to your computer via a micro USB cable. The USB port is located on the module's main circuit board, located under the panel. Please note that you do have to power the module in order for the USB connection to work - the module doesn't draw any power from the USB port.</p>
@@ -131,7 +131,7 @@
 <p>If things aren't working, see the section below on finding problems or <a href="#getting-support-and-help" referrerpolicy="origin">reach out</a>!</p>
 </div>
 <p><strong>Congrats</strong>, you've made your first change to how the module works! 🎉</p>
-<p>Big Honking Button can store multiple samples and you can use various means to change how they're triggered. We'll be adding a sample showing just that soon, but don't be afraid to experiment and reach out if you need any help!</p>
+<p>Big Honking Button can do all sorts of neat stuff by changing its code. Check out the <a href="#examples" referrerpolicy="origin">examples</a> or jump in the deep end with the <a href="#code-reference" referrerpolicy="origin">code reference</a>. Don't be afraid to experiment and reach out if you need any help!</p>
 <p>If you want to you can learn more about <a href="https://learn.adafruit.com/welcome-to-circuitpython/overview" referrerpolicy="origin" rel="noopener" target="_blank">CircuitPython</a> to the most of your module. Also, please come chat on the <a href="https://discord.gg/UpfqghQ" referrerpolicy="origin" rel="noopener" target="_blank">Discord</a> where you can ask questions and see what others are doing with their Big Honking Button!</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" referrerpolicy="origin" title="Permanent link">#</a></h2>
 <p>Big Honking Button can do all sorts of things! We've made a few examples to show you some of the things it can do:</p>
@@ -145,14 +145,122 @@
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cycle.py" referrerpolicy="origin" rel="noopener" target="_blank">Cycle example</a>: Shows how to load multiple samples and cycle between them.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/random.py" referrerpolicy="origin" rel="noopener" target="_blank">Random example</a>: Shows how to load multiple samples and choose one at random.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cv_select.py" referrerpolicy="origin" rel="noopener" target="_blank">CV select example</a>: Shows how to load multiple samples and use the CV input to select which one to play.</li>
+<li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/press_release.py" referrerpolicy="origin" rel="noopener" target="_blank">Press &amp; release example</a> shows how to play a different sample when pressing the button and releasing the button.</li>
+<li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/button_gate.py" referrerpolicy="origin" rel="noopener" target="_blank">Separate button &amp; gate example</a> shows how to play a different sample depending on if the button was pressed or the gate in was triggered.</li>
+<li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/honk_burst.py" referrerpolicy="origin" rel="noopener" target="_blank">Burst example</a> shows how to play a "burst" of samples when the button is pressed.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/tap_tempo.py" referrerpolicy="origin" rel="noopener" target="_blank">Tap tempo example</a>: Shows how to use the button to set the tempo and have the module play back a sample at each beat.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/sine.py" referrerpolicy="origin" rel="noopener" target="_blank">Sine example</a>: An advanced example that shows how to generate a custom waveform.</li>
 <li><a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/noise.py" referrerpolicy="origin" rel="noopener" target="_blank">Noise example</a>: An advanced example that shows how to generate noise.</li>
 </ol>
+<p>If you're ready to go beyond the examples, check out the <a href="#code-reference" referrerpolicy="origin">code reference</a>.</p>
 <h2 id="help-i-changed-some-code-and-this-thing-isnt-working">Help! I changed some code and this thing isn't working!<a class="headerlink" href="#help-i-changed-some-code-and-this-thing-isnt-working" referrerpolicy="origin" title="Permanent link">#</a></h2>
 <p>There's probably some sort of error in the program. Don't worry, you can get it figured out.</p>
 <p>If you connect using the <a href="https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console" referrerpolicy="origin" rel="noopener" target="_blank">serial console</a> you should be able to see the error. If you don't see it right away, you might need to reset the board (either by pressing the little button on the bottom of the module or power cycling your synth). Sometimes you can press <code>Ctrl+C</code> followed by <code>Ctrl+D</code> in the serial console to get the board to reset and tell you the error.</p>
 <p>In any case, reach out on <a href="https://discord.gg/UpfqghQ" referrerpolicy="origin" rel="noopener" target="_blank">Discord</a> and we can walk you through figuring out what went wrong.</p>
+<h2 id="code-reference">Code reference<a class="headerlink" href="#code-reference" referrerpolicy="origin" title="Permanent link">#</a></h2>
+<p>Big Honking Button runs <a href="https://circuitpython.org" referrerpolicy="origin" rel="noopener" target="_blank">CircuitPython</a> and provides a helpful <code>BigHonkingButton</code> class for accessing the hardware and features. The first thing that you'll do in your code is import that class and create an instance:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">winterbloom_bhb</span>
+
+<span class="n">bhb</span> <span class="o">=</span> <span class="n">winterbloom</span><span class="o">.</span><span class="n">BigHonkingButton</span><span class="p">()</span>
+</code></pre></div>
+<p>In a lot of cases, the first thing you'll do with the <code>bhb</code> instance is load some samples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">honk</span> <span class="o">=</span> <span class="n">bhb</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s2">&quot;samples/honk.wav&quot;</span><span class="p">)</span>
+<span class="n">clap</span> <span class="o">=</span> <span class="n">bhb</span><span class="o">.</span><span class="n">load_sample</span><span class="p">(</span><span class="s2">&quot;samples/clap.wav&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Once you're all set up, you'll start the <strong>update loop</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">bhb</span><span class="o">.</span><span class="n">update</span><span class="p">():</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>This loop will repeat over and over. Each time the loop is run, <code>bhb.update()</code> is called and it will read in the state of the button, gate in, and CV input. You have to call <code>bhb.update()</code> otherwise it won't ever know if things change!</p>
+<h3 id="inputs">Inputs<a class="headerlink" href="#inputs" referrerpolicy="origin" title="Permanent link">#</a></h3>
+<p>While inside the loop you can check the state of the various inputs. First, you can check if <strong>either</strong> the button has been pressed <strong>or</strong> the gate in has gone from low to high:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>Similarly, you can check if <strong>either</strong> the button has been released <strong>or</strong> the gate has gone from high to low:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>These two states are demonstrated in the <a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/default.py" referrerpolicy="origin" rel="noopener" target="_blank">default example</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">bhb</span><span class="o">.</span><span class="n">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">triggered</span><span class="p">:</span>
+        <span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;honk.wav&quot;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">bhb</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
+        <span class="n">bhb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<p>You can get more specific by checking the button and gate independently. You
+can use the <code>button</code> property to check the button:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+    <span class="c1"># Button was just pressed.</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
+    <span class="c1"># Button was just released.</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">button</span><span class="p">:</span>
+    <span class="c1"># Button is held down.</span>
+</code></pre></div>
+<p>Likewise, you can use the <code>gate_in</code> property to check the gate input:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">gate_in</span><span class="o">.</span><span class="n">rising_edge</span><span class="p">:</span>
+    <span class="c1"># Gate in just moved from low to high.</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">gate_in</span><span class="o">.</span><span class="n">falling_edge</span><span class="p">:</span>
+    <span class="c1"># Gate in just moved from high to low.</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">gate_in</span><span class="p">:</span>
+    <span class="c1"># The gate input is being held high.</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Aliases</p>
+<p>For convenience, <code>bhb.button</code> and <code>bhb.gate_in</code> have property aliases. <code>.pressed</code>, <code>.rising_edge</code>, and <code>.triggered</code> are all the same, likewise, <code>.released</code> and <code>.falling_edge</code> are the same.</p>
+</div>
+<p>The pitch CV input is a little different. You can use <code>bhb.pitch_in</code> to read the <em>voltage</em> on the pitch CV input. Remember, the input range is <code>-5v</code> to <code>+5v</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">pitch_in</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>More usefully you can use the pitch input to re-pitch the sample:</p>
+<div class="highlight"><pre><span></span><code>bhb.play(honk, pitch_cv=bhb.pitch_in)
+</code></pre></div>
+<p>There are other ways you can use the CV input, for instance, the <a href="https://github.com/wntrblm/Big_Honking_Button/blob/main/examples/cv_select.py" referrerpolicy="origin" rel="noopener" target="_blank">CV select example</a> uses it to select from a list of samples.</p>
+<h3 id="outputs">Outputs<a class="headerlink" href="#outputs" referrerpolicy="origin" title="Permanent link">#</a></h3>
+<p>Big Honking Button has two outputs: an audio out and a gate out. The audio out can be used to play previously-loaded samples:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">honk</span><span class="p">)</span>
+</code></pre></div>
+<p>It can also play the sample repeatedly:</p>
+<div class="highlight"><pre><span></span><code><span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">honk</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>And re-pitch the sample:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Play at twice the frequency</span>
+<span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">honk</span><span class="p">,</span> <span class="n">pitch_cv</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1"># Play at half the frequency</span>
+<span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">honk</span><span class="p">,</span> <span class="n">pitch_cv</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Play at normal pitch</span>
+<span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">honk</span><span class="p">,</span> <span class="n">pitch_cv</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</code></pre></div>
+<p>By default, the sample will play all the way through. If you want to stop the
+sample you can use <code>bhb.stop()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+    <span class="n">bhb</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">some_long_sample</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">bhb</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
+    <span class="n">bhb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<p>When <code>stop()</code> is called the sample stops playing immediately - even if its in the middle of playback. If you play a new sample while a sample is playing, the old sample will stop immediately and the new one will start playing.</p>
+<p>Finally, there's the gate out:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">bhb</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+    <span class="c1"># Sets the output to +5v</span>
+    <span class="n">bhb</span><span class="o">.</span><span class="n">gate_out</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">elif</span> <span class="n">bhb</span><span class="o">.</span><span class="n">released</span><span class="p">:</span>
+    <span class="c1"># Sets the output to 0v</span>
+    <span class="n">bhb</span><span class="o">.</span><span class="n">gate_out</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
 <h2 id="updating-the-firmware">Updating the firmware<a class="headerlink" href="#updating-the-firmware" referrerpolicy="origin" title="Permanent link">#</a></h2>
 <p>Updating the firmware requires two steps: Updating CircuitPython and updating Big Honking Button's libraries.</p>
 <h3 id="updating-circuitpython">Updating CircuitPython<a class="headerlink" href="#updating-circuitpython" referrerpolicy="origin" title="Permanent link">#</a></h3>
@@ -204,7 +312,7 @@ Got a question not answered here? [Reach out](#getting-support-and-help), we'll 
 					>.
 				</p>
 				<p class="updated">
-					Last updated on July 09, 2021
+					Last updated on July 22, 2021
 				</p>
 			</div>
 		</footer>

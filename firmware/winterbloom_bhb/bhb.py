@@ -161,7 +161,7 @@ class BigHonkingButton:
             high = self.max_cv
 
         cv = min(high, max(low, cv))
-        count = len(list)
+        count = len(list) - 1
         span = high - low
         value = cv - low
         index = int((value / span) * count)

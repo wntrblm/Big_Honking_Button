@@ -1,6 +1,6 @@
 r
-loadfile .cache/bootloader.bin
-loadfile .cache/firmware.uf2.bin 0x2000
+loadfile .cache/bootloader.winterbloom_big_honking_button.bin
+loadfile .cache/circuitpython.winterbloom_big_honking_button.uf2.bin 0x2000
 r
 go
 exit

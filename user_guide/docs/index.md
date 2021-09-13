@@ -132,7 +132,7 @@ Big Honking Button runs [CircuitPython](https://circuitpython.org) and provides 
 ```python
 import winterbloom_bhb
 
-bhb = winterbloom.BigHonkingButton()
+bhb = winterbloom_bhb.BigHonkingButton()
 ```
 
 In a lot of cases, the first thing you'll do with the `bhb` instance is load some samples:

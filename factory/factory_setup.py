@@ -1,12 +1,11 @@
 import os
 import sys
 
-import wintertools.fs
-import wintertools.jlink
 import wintertools.circuitpython
+import wintertools.fs
 import wintertools.fw_fetch
+import wintertools.jlink
 import wintertools.uf2_to_bin
-
 
 DEVICE_NAME = "winterbloom_big_honking_button"
 USB_DEVICE_ID = "239A:6005"
@@ -91,6 +90,9 @@ def main():
             deploy_circuitpython_code()
     else:
         deploy_circuitpython_code()
+
+    print("resetting")
+    wintertools.circuitpython.reset_via_serial(USB_DEVICE_ID)
 
 
 if __name__ == "__main__":

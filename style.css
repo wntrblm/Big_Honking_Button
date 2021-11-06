@@ -1,39 +1,166 @@
 /*
- * Globals
- */
+    Section: imports
+*/
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;700&family=IBM+Plex+Mono&family=Material+Icons&family=Nunito&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=IBM+Plex+Mono&family=Material+Icons&display=swap");
+/*
+    Section: non-sematic global variables
+*/
+:root {
+    --color-white: rgb(255, 255, 255);
+    --color-not-quite-black: #333;
+    --color-yellow-1: rgb(184, 125, 33);
+    --color-yellow-2: rgb(219, 161, 64);
+    --color-yellow-3: rgb(250, 194, 105);
+    --color-yellow-4: rgb(255, 214, 143);
+    --color-yellow-5: rgb(255, 229, 186);
+    --color-red-1: rgb(191, 36, 54);
+    --color-red-2: rgb(217, 74, 92);
+    --color-red-3: rgb(245, 115, 128);
+    --color-red-4: rgb(250, 153, 163);
+    --color-red-5: rgb(252, 194, 201);
+    --color-teal-1: rgb(38, 120, 128);
+    --color-teal-2: rgb(64, 140, 148);
+    --color-teal-3: rgb(102, 173, 181);
+    --color-teal-4: rgb(153, 209, 214);
+    --color-teal-5: rgb(204, 237, 240);
+    --color-purple-1: rgb(94, 64, 158);
+    --color-purple-2: rgb(125, 97, 186);
+    --color-purple-3: rgb(163, 138, 214);
+    --color-purple-4: rgb(199, 184, 237);
+    --color-purple-5: rgb(235, 227, 250);
+    --color-alt-yellow-5: rgb(255, 251, 200);
+    --color-alt-yellow-4: rgb(255, 249, 162);
+    --color-alt-yellow-3: rgb(254, 247, 129);
+    --color-alt-yellow-2: rgb(202, 196, 100);
+    --color-alt-yellow-1: rgb(137, 133, 78);
+    --color-alt-green-5: rgb(199, 255, 226);
+    --color-alt-green-4: rgb(162, 255, 207);
+    --color-alt-green-3: rgb(129, 255, 190);
+    --color-alt-green-2: rgb(100, 203, 150);
+    --color-alt-green-1: rgb(78, 137, 107);
+    --color-alt-cyan-5: rgb(199, 248, 254);
+    --color-alt-cyan-4: rgb(163, 243, 255);
+    --color-alt-cyan-3: rgb(129, 238, 255);
+    --color-alt-cyan-2: rgb(100, 190, 203);
+    --color-alt-cyan-1: rgb(78, 129, 137);
+    --color-alt-purple-5: rgb(220, 200, 255);
+    --color-alt-purple-4: rgb(196, 163, 255);
+    --color-alt-purple-3: rgb(174, 129, 255);
+    --color-alt-purple-2: rgb(136, 100, 202);
+    --color-alt-purple-1: rgb(98, 78, 137);
+    --color-alt-purple-alt-5: rgb(128, 119, 168);
+    --color-alt-purple-alt-4: rgb(113, 103, 153);
+    --color-alt-purple-alt-3: rgb(67, 62, 86);
+    --color-alt-purple-alt-2: rgb(40, 38, 52);
+    --color-alt-purple-alt-1: rgb(18, 18, 24);
+    --color-alt-red-5: rgb(255, 200, 219);
+    --color-alt-red-4: rgb(255, 163, 195);
+    --color-alt-red-3: rgb(254, 129, 173);
+    --color-alt-red-2: rgb(202, 100, 135);
+    --color-alt-red-1: rgb(137, 77, 98);
+    --color-alt-cream: rgb(228, 229, 198);
+    --color-alt-gray: rgb(137, 137, 119);
+    --color-alt-light-gray: rgb(191, 191, 191);
+    --color-alt-off-white: rgb(247, 248, 240);
+    --color-alt-white: rgb(255, 255, 255);
+
+    /* properties */
+    --letter-spacing-1: 0.05em;
+    --letter-spacing-2: 0.1em;
+
+    /* fonts */
+    --font-overpass: "Overpass", Helvetica, Arial, sans-serif;
+    --font-nunito: "Nunito", Arial, "Geneva", sans-serif;
+    --font-ibm-plex-mono: "IBM Plex Mono", "Monaco", "Consolas", monospace;
+}
+
+/*
+    Section: semantic global variables
+*/
+/* stylelint-disable-next-line no-duplicate-selectors */
+:root {
+    /* general typography */
+    --text-color: var(--color-not-quite-black);
+    --display-font: var(--font-overpass);
+    --text-font: var(--font-nunito);
+    --mono-font: var(--font-ibm-plex-mono);
+    --font-size-base: 23px;
+    --font-size-smallest: 0.5rem;
+    --font-size-smaller: 0.75rem;
+    --font-size-slightly-smaller: 0.9rem;
+    --font-size-normal: 1rem;
+    --font-size-slightly-larger: 1.25rem;
+    --font-size-larger: 1.75rem;
+    --font-size-largest: 2rem;
+
+    /* links */
+    --link-color: var(--color-red-1);
+    --link-decoration: underline var(--color-red-4) solid 1px;
+    --link-hover-color: var(--color-teal-1);
+    --link-hover-decoration: underline var(--color-alt-cyan-4) solid 1px;
+
+    /* buttons */
+    --primary-button-text-color: var(--color-white);
+    --primary-button-bg: var(--color-purple-2);
+    --success-button-text-color: var(--color-white);
+    --success-button-bg: var(--color-alt-green-2);
+    --add-to-cart-button-text-color: var(--color-white);
+    --add-to-cart-button-bg: var(--color-purple-2);
+
+    /* nav & header */
+    --header-link-color: var(--color-teal-1);
+    --header-link-hover-color: var(--color-red-1);
+}
 
 /*
     Base styles
 */
 
-html {
-    font-size: 23px;
-    color: #333;
-    font-family: "Overpass", sans-serif;
+html,
+body,
+input,
+optgroup,
+select,
+textarea {
+    font-family: var(--text-font);
+    color: var(--color-not-quite-black);
+    font-size: var(--font-size-base);
 }
 
-.content {
-    font-family: "Overpass", sans-serif;
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--display-font);
 }
 
 /*
-    Link styles
+    Section: links
 */
 a,
 a:focus,
 a:hover {
-    color: #be2436;
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-decoration-thickness: 1px;
-    text-decoration-color: #f998a3;
+    color: var(--link-color);
+    text-decoration: var(--link-decoration);
 }
 
 a:hover {
-    color: #27787f;
-    text-decoration-color: #98d1d6;
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-decoration);
+}
+
+a.tags,
+a.tags:hover {
+    text-decoration: none;
+}
+
+a.tags::after,
+a.button::after {
+    content: none;
 }
 
 /* Mark external links */
@@ -47,25 +174,92 @@ a[href*="//"]:after
 }
 
 /*
-    Header & nav styles
+    Section: elevations
 */
-header {
+.is-elevated {
+    --elevation-shadow-color: rgba(180, 180, 180, 0.3);
+
+    box-shadow: -0.2rem -0.2rem 0.4rem rgba(180, 180, 180, 0.2), 0.1rem 0.15rem 0.15rem var(--elevation-shadow-color),
+        0.2rem 0.3rem 0.3rem var(--elevation-shadow-color);
+}
+
+.is-elevated.is-elevated-hoverable {
+    transition: 500ms box-shadow;
+}
+
+.is-elevated-more,
+.is-elevated.is-elevated-hoverable:hover {
+    --elevation-shadow-color: rgba(180, 180, 180, 0.2);
+
+    box-shadow: -0.2rem -0.2rem 0.4rem rgba(180, 180, 180, 0.2), 0.15rem 0.3rem 0.3rem var(--elevation-shadow-color),
+        0.4rem 0.6rem 0.6rem var(--elevation-shadow-color);
+}
+
+/*
+    Section: header & nav styles
+*/
+.header {
     margin-top: 1rem;
+    font-family: var(--display-font);
+    letter-spacing: var(--letter-spacing-1);
 }
 
-nav a.navbar-item {
-    color: #27787f;
+/*
+    Section: header & nav styles
+*/
+.header {
+    margin-top: 1rem;
+    font-family: var(--display-font);
+    letter-spacing: var(--letter-spacing-1);
+}
+
+.header .navbar .navbar-brand img {
+    max-height: 2rem;
+}
+
+.header .navbar .navbar-menu .navbar-end {
+    align-items: center;
+}
+
+.header .navbar-menu a.navbar-item {
+    color: var(--header-link-color);
     text-decoration: none;
-}
-nav a.navbar-item:hover {
-    color: #be2436;
+    padding: 0.2rem 0.25rem;
+    margin-right: 0.75rem;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
-nav a.navbar-item.active {
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-decoration-thickness: 1px;
-    text-decoration-color: #27787f;
+.header .navbar-menu a.navbar-item:hover {
+    color: var(--header-link-hover-color);
+    border-bottom: 2px solid var(--header-link-hover-color);
+}
+
+.header .navbar-menu a.navbar-item.is-active {
+    border-bottom: 2px solid var(--header-link-color);
+}
+
+/*
+    Section: Responsive styles for the navbar
+*/
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        padding: 0 0;
+    }
+
+    .header .navbar-menu a.navbar-item {
+        text-align: center;
+        padding: 0.75rem 0.75rem;
+        margin: 0 0;
+    }
+
+    .header .navbar-menu a.navbar-item,
+    .header .navbar-menu a.navbar-item.is-active,
+    .header .navbar-menu a.navbar-item:hover {
+        border-top: none;
+        border-bottom: none;
+    }
 }
 
 /*
@@ -78,7 +272,7 @@ nav a.navbar-item.active {
 .content h5,
 .content h6 {
     color: #5f419f;
-    font-weight: 700;
+    font-weight: normal;
     position: relative;
 }
 
@@ -262,18 +456,34 @@ article .admonition.warning .admonition-title::before {
 }
 
 /*
-    Footer
+    Section: footer
 */
-footer.footer {
+
+.footer {
     background: none;
 }
 
-footer.footer .container {
-    padding-top: 1rem;
-    border-top: 1px solid #41b990;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.75rem;
+.footer .container {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-teal-4);
+    font-family: var(--mono-font);
+    font-size: var(--font-size-smaller);
     text-align: center;
+    max-width: 600px;
+}
+
+.footer .social-icon-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer .social-icon-links a {
+    padding: 0 0.5rem;
+}
+
+.footer .social-icon-links a::after {
+    content: none;
 }
 
 /*
@@ -361,20 +571,89 @@ form .column .help-text code {
     Buttons
 */
 
-.button.is-primary {
-    background-color: #408D94;
+/*
+    Section: buttons
+*/
+
+.button {
+    transition: filter 200ms, background-color 250ms;
+    text-decoration: none;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
 }
 
-.button.is-primary:hover {
-    background-color: #66AEB5;
+.button:hover {
+    color: var(--primary-button-text-color);
+    filter: brightness(1.2);
+    text-decoration: none;
+}
+
+.button.is-primary {
+    color: var(--primary-button-text-color);
+    background: var(--primary-button-bg);
 }
 
 .button.is-warning {
-    background-color: #F9C269;
+    background-color: var(--color-yellow-3);
 }
 
-.button.is-warning:hover {
-    background-color: #FFD590;
+.button.is-error {
+    background-color: var(--color-red-2);
+}
+
+.button.is-success,
+.button.is-success[disabled] {
+    color: var(--success-button-text-color);
+    background: var(--success-button-bg);
+    opacity: 1;
+}
+
+.button.is-success:hover {
+    filter: none;
+}
+
+.button .material-icons {
+    height: auto;
+    width: auto;
+}
+
+.button .material-icons:first-child:not(:last-child) {
+    margin-right: 0.6rem;
+    margin-left: -0.1rem;
+}
+
+.button .material-icons:last-child:not(:first-child) {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+a.button:hover,
+a.button.is-ghost:hover {
+    text-decoration: none;
+}
+
+a.button.is-ghost {
+    color: var(--color-purple-2);
+}
+
+a.button.is-ghost:hover {
+    color: var(--color-red-2);
+}
+
+.alt-button {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--primary-button-bg);
+    color: var(--primary-button-text-color);
+    padding: 0.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
 }
 
 /*

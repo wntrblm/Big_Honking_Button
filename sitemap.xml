@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://honk.wntr.dev/</loc>
-         <lastmod>2021-09-13</lastmod>
+         <lastmod>2021-11-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://honk.wntr.dev/build/</loc>
-         <lastmod>2021-09-13</lastmod>
+         <lastmod>2021-11-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

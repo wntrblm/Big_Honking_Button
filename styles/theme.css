@@ -795,16 +795,28 @@ html.dark {
 }
 
 @media screen and (max-width: 1023px) {
-    .navbar-menu {
+    html.dark .navbar-menu {
         background: var(--color-alt-purple-alt-2);
     }
-    .navbar-menu .navbar-item.is-active {
+    html.dark .navbar-menu .navbar-item.is-active {
         background: var(--color-alt-purple-alt-3);
     }
 }
 
 html.dark .navbar-brand img {
     filter: brightness(1.50);
+}
+
+html.dark .navbar-item.has-dropdown:hover .navbar-link {
+    background: none;
+}
+
+html.dark .navbar-item:focus-within,  html.dark .navbar-dropdown {
+    background: var(--color-alt-purple-alt-2);
+}
+
+html.dark .navbar-item:focus-within,  html.dark .navbar-dropdown .navbar-item:hover {
+    background: var(--color-alt-purple-alt-3);
 }
 
 html.dark .card {

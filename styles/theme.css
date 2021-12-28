@@ -81,7 +81,6 @@
 /* stylelint-disable-next-line no-duplicate-selectors */
 :root {
     /* general typography */
-    --text-color: var(--color-not-quite-black);
     --display-font: var(--font-overpass);
     --text-font: var(--font-nunito);
     --mono-font: var(--font-ibm-plex-mono);
@@ -93,6 +92,13 @@
     --font-size-slightly-larger: 1.25rem;
     --font-size-larger: 1.75rem;
     --font-size-largest: 2rem;
+
+    /* general typography colors */
+    --text-color: var(--color-not-quite-black);
+    --text-color-strong: black;
+    --header-color: var(--color-purple-1);
+    --header-anchor-color: var(--color-purple-4);
+    --header-anchor-color-hover: var(--color-teal-2);
 
     /* links */
     --link-color: var(--color-red-1);
@@ -111,6 +117,18 @@
     /* nav & header */
     --header-link-color: var(--color-teal-1);
     --header-link-hover-color: var(--color-red-1);
+
+    /* admonitions */
+    --admonition-note-color: var(--color-purple-3);
+    --admonition-note-outline: var(--color-purple-2);
+    --admonition-warning-color: var(--color-red-3);
+    --admonition-warning-outline: var(--color-red-1);
+
+    /* forms */
+    --form-label-color: var(--color-not-quite-black);
+    --form-checkbox-hover: var(--color-alt-purple-2);
+    --form-help-background: var(--color-alt-cyan-5);
+    --form-help-code: var(--color-red-2);
 }
 
 /*
@@ -124,8 +142,12 @@ optgroup,
 select,
 textarea {
     font-family: var(--text-font);
-    color: var(--color-not-quite-black);
+    color: var(--text-color);
     font-size: var(--font-size-base);
+}
+
+strong {
+    color: var(--text-color-strong);
 }
 
 label,
@@ -164,6 +186,10 @@ a.button::after {
 }
 
 /* Mark external links */
+a[href*="//"] {
+    white-space: nowrap;
+}
+
 a[href*="//"]:after
 {
     content: "\2197";
@@ -221,7 +247,7 @@ a[href*="//"]:after
     align-items: center;
 }
 
-.header .navbar-menu a.navbar-item {
+.header .navbar-menu .navbar-item {
     color: var(--header-link-color);
     text-decoration: none;
     padding: 0.2rem 0.25rem;
@@ -230,13 +256,48 @@ a[href*="//"]:after
     border-bottom: 2px solid transparent;
 }
 
+.header .navbar-menu .navbar-item:last-child {
+    margin-right: 0;
+}
+
 .header .navbar-menu a.navbar-item:hover {
     color: var(--header-link-hover-color);
     border-bottom: 2px solid var(--header-link-hover-color);
+    background: none;
 }
 
 .header .navbar-menu a.navbar-item.is-active {
     border-bottom: 2px solid var(--header-link-color);
+}
+
+.header .navbar-menu .navbar-item.has-dropdown .navbar-link {
+    color: var(--header-link-color);
+    text-decoration: none;
+}
+
+.header .navbar-menu .navbar-dropdown {
+    padding: 0;
+    border-top: none;
+}
+
+.header .navbar-menu .has-dropdown.is-subactive .navbar-link {
+    border-bottom: 2px solid var(--header-link-color);
+}
+
+.header .navbar-menu .navbar-dropdown .navbar-item {
+    margin: 0;
+    padding: 1rem 1rem;
+    border-bottom: none;
+}
+
+.header .navbar-menu .navbar-dropdown .navbar-item:hover {
+    margin: 0;
+    border-bottom: none;
+}
+
+.header .navbar-menu .navbar-dropdown .navbar-item.is-active {
+    color: white;
+    background: var(--header-link-color);
 }
 
 /*
@@ -248,16 +309,15 @@ a[href*="//"]:after
         padding: 0 0;
     }
 
-    .header .navbar-menu a.navbar-item {
+    .header .navbar-menu .navbar-item {
         text-align: center;
         padding: 0.75rem 0.75rem;
         margin: 0 0;
     }
 
-    .header .navbar-menu a.navbar-item,
-    .header .navbar-menu a.navbar-item.is-active,
-    .header .navbar-menu a.navbar-item:hover {
-        border-top: none;
+    .header .navbar-menu .navbar-dropdown .navbar-item,
+    .header .navbar-menu .navbar-dropdown .navbar-item.is-active,
+    .header .navbar-menu .navbar-dropdown .navbar-item:hover {
         border-bottom: none;
     }
 }
@@ -271,13 +331,13 @@ a[href*="//"]:after
 .content h4,
 .content h5,
 .content h6 {
-    color: #5f419f;
+    color: var(--header-color);
     font-weight: normal;
     position: relative;
 }
 
 a.headerlink {
-    color: #c8b7ec;
+    color: var(--header-anchor-color);
     text-decoration: none;
     position: absolute;
     bottom: 0.1em;
@@ -285,7 +345,7 @@ a.headerlink {
     font-size: 75%;
 }
 a.headerlink:hover {
-    color: #408d94;
+    color: var(--header-anchor-color-hover);
 }
 h1 a.headerlink {
     display: none;
@@ -420,16 +480,16 @@ article .admonition a {
 }
 
 article .admonition.note {
-    border-left-color: #408d94;
-    background-color: #66AEB5;
+    border-left-color: var(--admonition-note-color);
+    background-color: var(--admonition-note-outline);
 }
 article .admonition.note .admonition-title::before {
     content: "💡 ";
 }
 
 article .admonition.warning {
-    border-left-color: #be2436;
-    background-color: #d94a5b;
+    border-left-color: var(--admonition-warning-color);
+    background-color: var(--admonition-warning-outline);
 }
 article .admonition.warning .admonition-title::before {
     content: "⚠️ ";
@@ -442,7 +502,8 @@ article .admonition.warning .admonition-title::before {
 }
 
 .notification.is-danger {
-    background-color: #D94A5B;
+    border-left-color: var(--admonition-warning-color);
+    background-color: var(--admonition-warning-outline);
 }
 
 /*
@@ -487,7 +548,7 @@ article .admonition.warning .admonition-title::before {
 }
 
 /*
-    Forms & inputs
+    Section: Forms & inputs
 */
 
 .form .section-divider {
@@ -496,6 +557,10 @@ article .admonition.warning .admonition-title::before {
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     border-bottom: 1px solid #AAA;
+}
+
+label.label {
+    color: var(--form-label-color);
 }
 
 input.input[type=range] {
@@ -511,6 +576,10 @@ input.checkbox {
     margin-top: -0.5em;
     margin-left: 0.5em;
     vertical-align: middle;
+}
+
+.checkbox:hover {
+    color: var(--form-checkbox-hover);
 }
 
 .device-info input[readonly] {
@@ -551,11 +620,11 @@ input.checkbox {
 
 form .column .help-text {
     margin-top: 2rem;
-    background-color: #CDEDF0;
+    background: var(--form-help-background);
 }
 
 form .column .help-text code {
-    color: #BE2436;
+    color: var(--form-help-code);
     background-color: transparent;
 }
 
@@ -663,4 +732,85 @@ a.button.is-ghost:hover {
 .hidden {
     display: none !important;
     visibility: hidden;
+}
+
+/*
+    Dark mode
+*/
+
+.dark-mode-switch {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-shadow: 0 0 0.5rem var(--text-color);
+}
+
+.dark-mode-switch:hover {
+    color: var(--color-alt-cyan-3);
+    cursor: pointer;
+}
+
+.dark-mode-switch .material-icons {
+    font-size: 1.5rem;
+}
+
+html.dark, html.dark body, html.dark .navbar {
+    background: var(--color-alt-purple-alt-1);
+}
+
+html.dark {
+    /* general typography */
+    --text-color: var(--color-alt-white);
+    --text-color-strong: var(--color-alt-cream);
+    --header-color: var(--color-purple-3);
+    --header-anchor-color: var(--color-purple-1);
+    --header-anchor-color-hover: var(--color-teal-4);
+
+    /* links */
+    --link-color: var(--color-red-3);
+    --link-decoration: underline var(--color-red-5) solid 1px;
+    --link-hover-color: var(--color-teal-3);
+    --link-hover-decoration: underline var(--color-alt-cyan-4) solid 1px;
+
+    /* buttons */
+    --primary-button-text-color: var(--color-white);
+    --primary-button-bg: var(--color-purple-2);
+    --success-button-text-color: var(--color-white);
+    --success-button-bg: var(--color-alt-green-2);
+    --add-to-cart-button-text-color: var(--color-white);
+    --add-to-cart-button-bg: var(--color-purple-2);
+
+    /* nav & header */
+    --header-link-color: var(--color-teal-4);
+    --header-link-hover-color: var(--color-red-3);
+
+    /* forms */
+    --form-label-color: var(--color-alt-off-white);
+    --form-checkbox-hover: var(--color-alt-purple-4);
+    --form-help-background: var(--color-alt-cyan-2);
+    --form-help-code: var(--color-purple-2);
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        background: var(--color-alt-purple-alt-2);
+    }
+    .navbar-menu .navbar-item.is-active {
+        background: var(--color-alt-purple-alt-3);
+    }
+}
+
+html.dark .navbar-brand img {
+    filter: brightness(1.50);
+}
+
+html.dark .card {
+    background: var(--color-alt-purple-alt-2);
+}
+
+html.dark .oshw {
+    filter: invert(1);
 }

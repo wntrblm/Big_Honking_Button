@@ -1,0 +1,48 @@
+/*
+    Copyright (c) 2021 Alethea Katherine Flowers.
+    Published under the standard MIT License.
+    Full text available at: https://opensource.org/licenses/MIT
+*/
+
+.pcb-assembly {
+    --edge-cuts: #ff99ce;
+    --board: #ffb9dd;
+    --pad: rgb(255, 220, 24);
+    --hole: white;
+    --pin1: var(--color-alt-green-2);
+    --silk: black;
+    --highlight-stroke: var(--color-alt-cyan-3);
+    --highlight-fill: rgba(0, 200, 255, 0.3);
+}
+.pcb-assembly canvas {
+    display: block;
+    width: 100%;
+    background: lightpink;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+.pcb-assembly canvas.back {
+    transform: scaleX(-1);
+}
+.pcb-assembly .bom-table td {
+    width: auto;
+}
+.pcb-assembly .bom-table td:first-child {
+    width: 0.1%;
+    white-space: nowrap;
+}
+.pcb-assembly .bom-table td:nth-child(2) {
+    width: 50%;
+}
+.pcb-assembly .bom-table tr input.checkbox {
+    margin-top: 0;
+}
+.pcb-assembly .bom-table tr:hover {
+    background-color: var(--color-purple-5);
+}
+.pcb-assembly .bom-table tr.active {
+    background-color: var(--color-alt-cyan-3);
+}
+.pcb-assembly .bom-table tr.complete {
+    color: #888;
+}

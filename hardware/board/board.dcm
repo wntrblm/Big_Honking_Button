@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP GD25Q64C
-D 64Mb Serial Flash Memory, Standard/Dual/Quad SPI, SOIC-8
-K flash memory SPI
-F http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf
-$ENDCMP
-#
-#End Doc Library

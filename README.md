@@ -1,6 +1,6 @@
 # Winterbloom Big Honking Button
 
-Winterbloom Big Honking Button is an open-source Eurorack module. You can find out more at https://wntr.dev/honk.
+Winterbloom Big Honking Button is an open-source Eurorack module. You can find out more at https://honk.wntr.dev/.
 
 ## License and contributing
 

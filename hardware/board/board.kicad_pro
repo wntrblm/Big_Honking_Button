@@ -61,7 +61,7 @@
         }
       ],
       "drc_exclusions": [
-        "courtyards_overlap|73365717|109257120|bc913778-04d0-4e9b-a697-67da979ab91c|d44cfe24-3546-43ba-a82e-bf458ab88675"
+        "net_conflict|56248400|152681000|18d6a56b-e2b4-4b39-b0a1-53a4d73bf419|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "filename": "board_design_settings.json",
@@ -88,7 +88,7 @@
         "item_on_disabled_layer": "error",
         "items_not_allowed": "error",
         "length_out_of_range": "error",
-        "lib_footprint_issues": "warning",
+        "lib_footprint_issues": "ignore",
         "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
@@ -725,7 +725,7 @@
       "idf": "",
       "netlist": "board.net",
       "specctra_dsn": "",
-      "step": "",
+      "step": "board.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

@@ -5,12 +5,13 @@
   (paper "USLetter")
 
   (title_block
-    (title "Big Honking Button")
-    (date "2023-08-02")
-    (rev "v5")
+    (title "Goosehonk Nebula")
+    (date "2023-10-08")
+    (rev "v7")
     (company "Winterbloom")
     (comment 1 "Alethea Flowers")
     (comment 2 "CERN-OHL-P V2")
+    (comment 3 "goose.wntr.dev")
   )
 
   (lib_symbols

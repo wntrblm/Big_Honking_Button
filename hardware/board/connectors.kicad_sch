@@ -2,7 +2,17 @@
 
   (uuid 9a7516ab-7051-441b-b376-c7aaca16dd1a)
 
-  (paper "A4")
+  (paper "USLetter")
+
+  (title_block
+    (title "Goosehonk Nebula")
+    (date "2023-10-08")
+    (rev "v7")
+    (company "Winterbloom")
+    (comment 1 "Alethea Flowers")
+    (comment 2 "CERN-OHL-P V2")
+    (comment 3 "goose.wntr.dev")
+  )
 
   (lib_symbols
     (symbol "Connector:TestPoint" (pin_numbers hide) (pin_names (offset 0.762) hide) (in_bom yes) (on_board yes)

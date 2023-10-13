@@ -51,6 +51,7 @@
       (dielectric_constraints no)
     )
     (pad_to_mask_clearance 0.0508)
+    (aux_axis_origin 56 80.000017)
     (grid_origin 56 80.000017)
     (pcbplotparams
       (layerselection 0x00010fc_ffffffff)
@@ -66,7 +67,7 @@
       (plotframeref false)
       (viasonmask false)
       (mode 1)
-      (useauxorigin false)
+      (useauxorigin true)
       (hpglpennumber 1)
       (hpglpenspeed 20)
       (hpglpendiameter 15.000000)
@@ -84,7 +85,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "gerber")
+      (outputdirectory "gerbers")
     )
   )
 
